@@ -1,8 +1,11 @@
 import React from 'react'
+import MainRouter from './routing/MainRouter'
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+      <MainRouter />
+    </>
   )
 }
 
