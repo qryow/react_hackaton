@@ -44,7 +44,7 @@ const Login = () => {
                   <>
                     <div className={style.errorcenter}>
                       <div className={style.errorBlock}>
-                        <h3>An error occured!</h3>
+                        <h3 className={style.status__error}>An error occured!</h3>
                         <button className={style.try__again} onClick={() => dispatch(clearStatusState())}>Try again</button>
                       </div>
                     </div>

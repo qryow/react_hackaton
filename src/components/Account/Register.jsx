@@ -42,8 +42,8 @@ const Register = () => {
                 {status === "error" && (
                   <>
                     <div className="errorcenter">
-                      <div className="errorBlock">
-                        <h3>An error occured!</h3>
+                      <div className={style.errorBlock}>
+                        <h3 className={style.status__error}>An error occured :(</h3>
                         <button className={style.try__again} onClick={() => dispatch(clearStatusState())}>
                           Try again
                         </button>
