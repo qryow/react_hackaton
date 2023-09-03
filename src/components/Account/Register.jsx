@@ -59,7 +59,7 @@ const Register = () => {
                   </div>
 
                   <div className={style.inputs__block}>
-                  <div className={style.inputs__block2}>/
+                  <div className={style.inputs__block2}>
                     <form className={style.form} action="">
                       <h2 className={style.form__title}>Sign up</h2>
 
