@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from '../components/Navbar'
 
 const CreatePage = () => {
     return (
         <div>
-            CreatePage
+            <Navbar />
         </div>
     );
 };

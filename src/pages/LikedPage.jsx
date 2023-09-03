@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from '../components/Navbar'
 
 const LikedPage = () => {
     return (
         <div>
-            LikedPage
+            <Navbar />
         </div>
     );
 };

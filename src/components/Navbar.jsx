@@ -27,7 +27,7 @@ const Navbar = () => {
     setLibraryImage(library);
     setCreateImage(create);
     setLikedImage(liked);
-    navigate('/');
+    navigate('/homepage');
   };
 
   const handleLoopClick = () => {
