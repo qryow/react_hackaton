@@ -8,6 +8,7 @@ import SearchPage from '../pages/SearchPage'
 import LibraryPage from '../pages/LibraryPage'
 import CreatePage from '../pages/CreatePage'
 import LikedPage from '../pages/LikedPage'
+import CreateMusicPage from '../pages/CreateMusicPage'
 
 const MainRouter = () => {
   const ROUTES = [
@@ -50,6 +51,11 @@ const MainRouter = () => {
       id: 8,
       path: '/liked',
       element: <LikedPage />
+    },
+    {
+      id: 9,
+      path: '/create-music',
+      element: <CreateMusicPage />
     },
   ]
 
