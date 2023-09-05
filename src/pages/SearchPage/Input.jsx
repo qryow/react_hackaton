@@ -20,8 +20,8 @@ const Input = () => {
 
 
     return (
-        <form className={style.search_input}>
-            <button type="submit" onSubmit={searchBtn}>
+        <form className={style.search_input} onSubmit={searchBtn}>
+            <button type="submit" onClick={searchBtn}>
             <img src={searchImg} alt="" />
             </button>
             <input

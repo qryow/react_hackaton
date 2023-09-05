@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../../styles/index.module.css';
-import { FaEdit, FaTrash } from "react-icons/fa";
+//import { FaEdit, FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 
