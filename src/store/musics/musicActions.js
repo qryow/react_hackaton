@@ -4,8 +4,8 @@ import { MUSICS_API } from "../../helpers/consts";
 
 export const getMusics = createAsyncThunk(
   'musics/getMusics',
-  async () => {
-    let res = await axios.get(MUSICS_API);
+  async (search) => {
+    const res = await axios.get(`${MUSICS_API}?search=${search}`);
     console.log(res);
     return res; 
   }

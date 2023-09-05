@@ -12,7 +12,7 @@
 /* !Navbar */
 
 .navbar {
-    width: 240px;
+    width: 20%;
     height: 100%;
     position: fixed;
     background: black;
@@ -78,12 +78,11 @@
     margin-left: 20%;
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: #121212;
 }
 
 .top{
     display: flex;
-    
 }
 
 .top_title{
@@ -115,9 +114,9 @@ hr{
 .music_item{
     width: 100%;
     height: 50px;
-    margin-top: 3%;
+    margin-top: 2%;
     display: flex;
-    background-color: darkblue;
+    background: none;
     align-items: center;
 }
 
@@ -128,11 +127,61 @@ hr{
     margin: 2%;
 }
 
-.music_item p{
-    color: white;
-}
 
 .music_item_album {
     position: absolute;
     margin-left: 35%;
+}
+
+.music_title{
+    color: white;
+}
+
+
+/* !Search Navbar */
+
+.search_navbar{
+    width: 80%;
+    height: 60px;
+    background-color: black;
+    margin-left: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.pagination{
+    margin-left: 2%;
+}
+
+.pagination > img{
+    width: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.search_input{
+    background-color: white;
+    padding: 7px 10px;
+    border-radius: 30px;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search_input > button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.search_input > button > img{
+    width: 20px;
+}
+
+.search_input > input{
+    border: none;
+    outline: none; 
+    width: 85%;
+    font-size: 15px;
+    color: black;
 }
