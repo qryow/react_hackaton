@@ -1,0 +1,70 @@
+.profile__wrapper {
+  position: relative;
+  margin: 10px;
+  width: 30%;
+  background-color: #2c2c2c;
+  border-radius: 10px;
+}
+.close {
+  display: none;
+}
+.open {
+  display: inherit;
+}
+
+.navbar__wrapper {
+  width: 12.6%;
+  background-color: transparent;
+}
+
+.profile__accaunt {
+  height: 370px;
+  background-color: #3f3f3f;
+}
+
+.profile__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 25px 25px 30px;
+}
+.nav__title {
+  font-family: sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav__close {
+  width: 4%;
+}
+
+.nav__close_img {
+  width: 100%;
+}
+
+.profile__content {
+  height: 200px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__img {
+  width: 35%;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__info {
+  width: 55%;
+}
+.profile__name {
+  font-family: sans-serif;
+  font-size: 30px;
+  margin-top: 40px;
+}
