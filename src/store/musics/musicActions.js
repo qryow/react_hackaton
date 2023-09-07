@@ -6,7 +6,8 @@ export const getMusics = createAsyncThunk(
   'musics/getMusics',
   async () => {
     let res = await axios.get(MUSICS_API);
-    return res;
+    console.log(res);
+    return res; 
   }
 )
 

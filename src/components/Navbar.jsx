@@ -69,7 +69,7 @@ const Navbar = () => {
 
   return (
     <div className={style.navbar}>
-      <img onClick={() => navigate("/")} src={spotify} alt="spotify" />
+      <img onClick={() => navigate("/homepage")} src={spotify} alt="spotify" />
       <div className={style.navbar_list}>
         <button onClick={handleHomeClick} className={style.list}>
           <img src={homeImage} alt="" />
