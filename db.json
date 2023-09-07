@@ -1,4 +1,12 @@
 {
+  "profiles": [
+    {
+      "firstName": "Elmar",
+      "secondName": "ramle",
+      "avatar": "https://i.pinimg.com/236x/3b/8b/d5/3b8bd5625f175014386f7ed7a1027243.jpg",
+      "id": 2
+    }
+  ],
   "musics": [
     {
       "title": "Death Bed",

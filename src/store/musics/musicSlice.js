@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getMusics } from "./musicActions";
 
-const MusicsSlice = createSlice({
+const musicsSlice = createSlice({
   name: 'musics',
   initialState: {
     loading: false,
@@ -23,4 +23,4 @@ const MusicsSlice = createSlice({
   }
 })
 
-export default MusicsSlice.reducer;
+export default musicsSlice.reducer;
