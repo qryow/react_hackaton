@@ -9,7 +9,7 @@ import LibraryPage from '../pages/LibraryPage'
 import CreatePage from '../pages/CreatePage'
 import LikedPage from '../pages/LikedPage'
 import CreateMusicPage from '../pages/CreateMusicPage'
-import ProfileModal from '../components/Profile/ProfileModal'
+import EditProfilePage from '../pages/ProfilePages/EditProfilePage'
 
 const MainRouter = () => {
   const ROUTES = [
@@ -61,7 +61,7 @@ const MainRouter = () => {
     {
       id: 10,
       path: '/profile-edit/:id',
-      element: <ProfileModal />
+      element: <EditProfilePage />
     },
   ]
 

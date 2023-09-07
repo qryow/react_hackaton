@@ -8,12 +8,10 @@ import close from '../../images/close.png';
 
 const ProfileModal = () => {
   const { loading, oneProfile } = useSelector(state => state.profiles)
-  //console.log(oneProfile);
   const { profiles } = useSelector(state => state.profiles);
   
   const [profile, setProfile] = useState(oneProfile || { firstName: '', secondName: '', avatar: ''});
   const { id } = useParams();
-  //console.log(id);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,7 +22,6 @@ const ProfileModal = () => {
 
   useEffect(() => {
     dispatch(getOneProfile(id));
-    //console.log(id);
     return () => dispatch(clearOneProfileState());
   }, [id]);
 
@@ -43,7 +40,7 @@ const ProfileModal = () => {
           <div className={style.modal__wrapper}>
             <div className={style.modal__nav}>
               <h3 className={style.modal__title}>Profile info</h3>
-              <div className={style.nav__close}>
+              <div className={style.nav__close} onClick={() => navigate('/homepage')}>
                 <img className={style.nav__close_img} src={close} alt="Close" />
               </div>
             </div>
@@ -51,9 +48,8 @@ const ProfileModal = () => {
             {profiles && profiles.map(oneProfile => (
                   <div className={style.modal__content} key={ oneProfile.id }>
                       <div className={style.modal__img}>
-                        <img className={style.img__avatar} src={ profile.avatar } alt="" />
+                        <img className={style.img__avatar} src={ oneProfile.avatar } alt=" " />
                       </div>
-                      <h4>{ oneProfile.name }</h4>
 
                       <div className={style.modal__inputs}>
 
@@ -75,7 +71,7 @@ const ProfileModal = () => {
                           <img src="" alt="" />
                         </div>
 
-                        <button onClick={() => {
+                        <button className={style.modal__btn} onClick={() => {
                             dispatch(editProfile(profile))
                             navigate("/homepage");
                         }}>Save</button>
