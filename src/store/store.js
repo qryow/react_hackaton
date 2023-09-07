@@ -10,6 +10,6 @@ export default configureStore({
   reducer: {
     user: userSlice,
     musics: musicSlice,
-    profile: profileSlice
+    profiles: profileSlice
   }
 })

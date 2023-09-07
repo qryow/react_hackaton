@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ACCOUNT_API } from './consts';
-import '../components/Profile/Profile.module.css'
+import '../components/Profile/styles/Profile.module.css'
 
 //* registration
 
