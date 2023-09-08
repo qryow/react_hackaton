@@ -10,6 +10,7 @@ import CreatePage from '../pages/CreatePage'
 import LikedPage from '../pages/LikedPage'
 import CreateMusicPage from '../pages/CreateMusicPage'
 import PremiumAccPage from '../pages/PremiumAccPage'
+import EditProfilePage from '../pages/ProfilePages/EditProfilePage'
 
 const MainRouter = () => {
   const ROUTES = [
@@ -60,9 +61,14 @@ const MainRouter = () => {
     },
     {
       id: 10,
+      path: '/profile-edit/:id',
+      element: <EditProfilePage />
+    },
+    {
+      id: 11,
       path: '/premium',
       element: <PremiumAccPage />
-    },
+    }
   ]
 
   return (
