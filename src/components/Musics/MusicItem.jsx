@@ -18,7 +18,7 @@ const MusicItem = ({ music }) => {
                 alt={artwork}
             />
             <div>
-                <p>{ title }</p>
+                <p className={style.music_title}>{ title }</p>
                 <p>{ artist }</p>
             </div>
             <p className={style.music_item_album} >{ album }</p>

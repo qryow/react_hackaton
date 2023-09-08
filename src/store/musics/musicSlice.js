@@ -5,9 +5,14 @@ const musicsSlice = createSlice({
   name: 'musics',
   initialState: {
     loading: false,
-    musics: []
+    musics: [],
+    search: ''
   },
-  reducers: {},
+  reducers: {
+    changeSearchVal: (state, action) => {
+      state.search = action.payload.musics;
+  }
+  },
   extraReducers: (builder) => {
     builder
     .addCase(getMusics.pending, (state) => {
@@ -23,4 +28,5 @@ const musicsSlice = createSlice({
   }
 })
 
+export const { changeSearchVal } = musicsSlice.actions;
 export default musicsSlice.reducer;
