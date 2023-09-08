@@ -10,7 +10,7 @@ const musicsSlice = createSlice({
   },
   reducers: {
     changeSearchVal: (state, action) => {
-      state.search = action.payload.musics;
+      state.search = action.payload.search;
   }
   },
   extraReducers: (builder) => {

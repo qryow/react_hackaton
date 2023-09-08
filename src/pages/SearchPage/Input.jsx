@@ -20,13 +20,14 @@ const Input = () => {
 
 
     return (
-        <form className={style.search_input}>
-            <button type="submit" onSubmit={searchBtn}>
+        <form className={style.search_input} onSubmit={searchBtn}>
+            <button type="submit">
             <img src={searchImg} alt="" />
             </button>
             <input
             type="text"
             placeholder="Artists, songs, or podcasts"
+            value={search}
             onChange={(e) => setSearch(e.target.value)}
             />
         </form>
