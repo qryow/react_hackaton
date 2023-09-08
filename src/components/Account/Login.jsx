@@ -6,12 +6,19 @@ import style from './Registration.module.css';
 
 import { loginUser } from '../../store/account/userAction';
 import { clearStatusState, clearUserState } from '../../store/account/userSlice';
+import { createProfile } from '../../store/profile/profileActions'
 
 const Login = () => {
   const [user, setUser] = useState({
     username: "",
     password: ""
   });
+
+  const [profile, setProfile] = useState({
+    firstName: "",
+    secondName: "",
+    avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
+  })
 
   const { loading, status } = useSelector(state => state.user);
 
@@ -74,7 +81,16 @@ const Login = () => {
                           <img src="" alt="" />
                         </div>
 
-                        <button className={style.form__button} onClick={() => dispatch(loginUser({ user, navigate }))}>Login</button>
+                        <div className={style.input__box}>
+                          <input type="text" required className={style.form__input} onChange={(e) => setProfile({ ...profile, firstName: e.target.value })} />
+                          <label>Profile name</label>
+                          <img src="" alt="" />
+                        </div>
+
+                        <button className={style.form__button} onClick={() => {
+                          dispatch(loginUser({ user, navigate }))
+                          dispatch(createProfile(profile));
+                          }}>Login</button>
                       </form>
                     </div>
                   </div>
