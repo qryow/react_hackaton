@@ -28,7 +28,7 @@ const Profile = () => {
     <>
       <div className={style.navbar__wrapper}></div>
 
-      {/*<button onClick={toggle}>Profile</button>*/}
+      <button onClick={toggle}>Profile</button>
 
       <div className={profileClasses}>
         <div className={style.profile__account}>

@@ -1,16 +1,21 @@
 import React from 'react';
 import style from '../../styles/index.module.css';
-import { FaEdit, FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
+import { openPlayer } from '../../store/MusicPlayer/playerSlice';
 
 const MusicItem = ({ music }) => {
     const { title, artist, artwork, album, url, id } = music;
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    const handleOpenPlayer = () => {
+        dispatch(openPlayer({ title, artist, artwork, url }));
+    };
+
     return (
-        <div className={style.music_item}>
+        <div className={style.music_item} onClick={handleOpenPlayer}>
             <p>{id}</p>
             <img
                 onClick={() => navigate(`/musics/${id}`)}

@@ -6,8 +6,6 @@
 }
 
 .content{
-  display: flex;
-  justify-content: space-between;
   background: #1d1c1c;
     width: 100%;
     height: 200vh;
@@ -642,4 +640,12 @@ hr{
 
 .footer_down > div > p:hover{
     color: #00ff37;
+}
+
+
+.player{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
 }
