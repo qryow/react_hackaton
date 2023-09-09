@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
+import './PlayerStyle.css';
 
-const MusicPlayer = ({ music }) => {
-  const { url, title, artist, artwork, album } = music;
+const MusicPlayer = ({ url }) => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -34,13 +34,20 @@ const MusicPlayer = ({ music }) => {
   };
 
   return (
-    <div>
+    <div className='music_player'>
       <audio ref={audioRef} src={url} />
       <button onClick={togglePlay}>
         {isPlaying ? 'Pause' : 'Play'}
       </button>
+      <div className="progress-bar">
+        <div
+          className="progress"
+          style={{ width: `${(currentTime / duration) * 100}%` }}
+        ></div>
+      </div>
     </div>
   );
 };
 
 export default MusicPlayer;
+

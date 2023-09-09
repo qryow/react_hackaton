@@ -1,7 +1,30 @@
 .music_player{
+    background-color: black;
+    display: flex;
     position: fixed;
     bottom: 0;
     width: 100% ;
-
+    height: 15%;
 
 }
+
+.music_info {
+    display: flex;
+    align-items: center;
+  }
+
+.music_info > img{
+    width: 100px;
+    height: 100px;
+}
+  
+  .music_artwork {
+    width: 50px; /* Установите размер изображения по вашему усмотрению */
+    height: 50px; /* Установите размер изображения по вашему усмотрению */
+    margin-right: 10px;
+  }
+  
+  .music_details {
+    flex-grow: 1;
+  }
+  
