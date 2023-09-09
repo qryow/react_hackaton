@@ -1,23 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getProfile} from './profileActions';
+import { getProfile } from './profileActions';
 
 const ProfileSlice = createSlice({
-  name: 'profile',
+  name: 'profiles',
   initialState: {
-    profiles: []
+    profiles: [],
+    activeProfile: null
   },
   reducers: {
-    setRegistrationStatus: (state, action) => {
-      state.status = action.payload;
-    },
+    setActiveProfile: (state, action) => {
+      state.activeProfile = action.payload.data;
+    }
   },
   extraReducers: (builder) => {
     builder
       .addCase(getProfile.fulfilled, (state, action) => {
         state.profiles = action.payload.data;
-      });
+      })
   },
 });
 
-export const { setRegistrationStatus } = ProfileSlice.actions;
+export const { setActiveProfile } = ProfileSlice.actions;
 export default ProfileSlice.reducer;

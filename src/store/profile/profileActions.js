@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 import { PROFILE_API } from "../../helpers/consts";
 
+
 export const getProfile = createAsyncThunk(
   'profile/getProfile',
   async () => {
@@ -10,6 +11,7 @@ export const getProfile = createAsyncThunk(
     return res;
   }
 )
+
 
 export const createProfile = createAsyncThunk(
   'profile/createProfile',
