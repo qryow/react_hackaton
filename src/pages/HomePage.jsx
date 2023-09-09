@@ -9,7 +9,7 @@ const HomePage = () => {
     return (
         <div className={style.content}>
             <Navbar />
-            
+            <Profile />
             {/*<MusicListPage />*/}
         </div>
     );

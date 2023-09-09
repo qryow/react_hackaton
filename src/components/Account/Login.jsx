@@ -7,6 +7,7 @@ import style from './Registration.module.css';
 import { loginUser } from '../../store/account/userAction';
 import { clearStatusState, clearUserState } from '../../store/account/userSlice';
 import { setActiveProfile } from '../../store/profile/profileSlice'
+import { getProfile } from '../../store/profile/profileActions';
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -23,17 +24,19 @@ const Login = () => {
   useEffect(() => {
     dispatch(clearStatusState());
     dispatch(clearUserState());
+    dispatch(getProfile())
   }, []);
 
   const handleLogin = () => {
     let foundProfile;
-    if (Array.isArray(profiles)) {
-      foundProfile = profiles.find(profile => profile.firstName === user.username); 
+    if (Array.isArray(profiles.profiles)) {
+      foundProfile = profiles.profiles.find(profile => profile.firstName === user.username); 
       if (foundProfile) {
         dispatch(setActiveProfile(foundProfile));
       }
     }
     dispatch(loginUser({ user, navigate }));
+    console.log(foundProfile)
   };
 
 
