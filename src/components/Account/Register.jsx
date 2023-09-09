@@ -16,25 +16,27 @@ const Register = () => {
   });
   
   //const [profile, setProfile] = useState({
-  //  firstName: user.username, // Установите username как firstName
+  //  firstName: user.username,
   //  secondName: '',
   //  avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
   //});
 
   const registerAndCreateProfile = async () => {
     const registrationResult = await dispatch(registerUser({ user, navigate }));
-    
-    if (registrationResult.status === 'error') {
-      registrationResult.error = 'Ошибка при регистрации';
-    } else {
-      const updatedProfile = {
-        firstName: user.username,
-        secondName: '',
-        avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
-      };
-      dispatch(createProfile(updatedProfile));
-      }
+
+      if (registrationResult.status === "error") {
+        console.error('error:', registrationResult.error);
+        registrationResult.error = 'Ошибка при регистрации';
+        return registrationResult;
+      } else {
+        const updatedProfile = {
+          firstName: user.username,
+          secondName: '',
+          avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
+        };
+      dispatch(createProfile(updatedProfile))
     }
+  }
 
   const { loading, status } = useSelector((state) => state.user);
 
