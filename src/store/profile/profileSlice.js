@@ -1,35 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getProfile, getOneProfile } from './profileActions';
+import { getProfile} from './profileActions';
 
 const ProfileSlice = createSlice({
   name: 'profile',
   initialState: {
-    profiles: [],
-    oneProfile: null
+    profiles: []
   },
   reducers: {
-    clearOneProfileState: (state) => {
-      state.oneProfile = null;
-    }
+    setRegistrationStatus: (state, action) => {
+      state.status = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
-    .addCase(getProfile.fulfilled, (state, action) => {
-      state.profiles = action.payload.data;
-    })
-    .addCase(getOneProfile.pending, (state) => {
-      state.loading = true;
-    })
-    .addCase(getOneProfile.fulfilled, (state, action) => {
-      state.loading = false;
-      state.oneProfile = action.payload.data;
-      //console.log(action.payload.data);
-    })
-    .addCase(getOneProfile.rejected, (state) => {
-      state.loading = false;
-    })
-  }
-})
+      .addCase(getProfile.fulfilled, (state, action) => {
+        state.profiles = action.payload.data;
+      });
+  },
+});
 
-export const { clearOneProfileState } = ProfileSlice.actions;
+export const { setRegistrationStatus } = ProfileSlice.actions;
 export default ProfileSlice.reducer;
