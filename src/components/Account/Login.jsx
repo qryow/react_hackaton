@@ -31,8 +31,12 @@ const Login = () => {
     let foundProfile;
     if (Array.isArray(profiles.profiles)) {
       foundProfile = profiles.profiles.find(profile => profile.firstName === user.username); 
+      //console.log(foundProfile);
       if (foundProfile) {
         dispatch(setActiveProfile(foundProfile));
+      } else {
+        // Если профиль не найден, вы можете отправить действие с пустым профилем
+        dispatch(setActiveProfile(null));
       }
     }
     dispatch(loginUser({ user, navigate }));

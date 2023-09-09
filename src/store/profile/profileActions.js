@@ -21,6 +21,16 @@ export const createProfile = createAsyncThunk(
   }
 )
 
+export const editProfile = createAsyncThunk(
+  'profile/editProfile',
+  async ( editedObj, { dispatch }) => {
+    let res = await axios.patch(`${PROFILE_API}/${editedObj.id}`, editedObj);
+    console.log(editedObj); 
+    dispatch(getProfile());
+    return res;
+  }
+)
+
 //export const loadToCurrentProfile = createAsyncThunk(
 //  'profile/loadToCurrentProfile',
 //  async (id) => {

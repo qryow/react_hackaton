@@ -1,26 +1,33 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import style from './styles/Profile.module.css'
 
-const Profile = () => {
-  // Используем useSelector для доступа к foundProfile из Redux State
-  const foundProfile = useSelector(state => state.profile.activeProfile);
-  console.log(foundProfile);
+const ProfileComponent = () => {
+  const activeProfile = useSelector(state => state.profiles.activeProfile);
 
-  // Выводим информацию о найденном профиле
+  const navigate = useNavigate();
+
+  // Проверьте, что activeProfile существует и содержит ожидаемые данные
+  if (!activeProfile) {
+    return (
+      <div>
+        <p>No active profile selected</p>
+      </div>
+    );
+  }
+
   return (
-    <div>
-      <h1>Profile Page</h1>
-      {foundProfile ? (
-        <div>
-          <p>First Name: {foundProfile.firstName}</p>
-          <p>Last Name: {foundProfile.lastName}</p>
-          {/* Другие поля профиля */}
-        </div>
-      ) : (
-        <p>No profile found</p>
-      )}
-    </div>
+    <div className={style.profile__content} key={ activeProfile.id } onClick={() => navigate(`/profile-edit/${activeProfile.id}`)} >
+                  <div className={style.profile__img}>
+                    <img className={style.img__avatar} src={ activeProfile.avatar } alt="" />
+                  </div>
+                <div className={style.profile__info}>
+                  <h3 className={style.profile__name}> { activeProfile.firstName } </h3>
+                  <h3 className={style.profile__name}> { activeProfile.secondName } </h3>
+                </div>
+              </div>
   );
 };
 
-export default Profile
+export default ProfileComponent;

@@ -9,13 +9,15 @@ const ProfileSlice = createSlice({
   },
   reducers: {
     setActiveProfile: (state, action) => {
-      state.activeProfile = action.payload.data;
+      state.activeProfile = action.payload;
+      console.log(action.payload)
     }
   },
   extraReducers: (builder) => {
     builder
       .addCase(getProfile.fulfilled, (state, action) => {
         state.profiles = action.payload.data;
+        //console.log(action.payload.data)
       })
   },
 });
