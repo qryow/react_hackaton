@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from '../../styles/index.module.css';
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,11 @@ const MusicItem = ({ music }) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    const [isPlaying, setIsPlaying] = useState(false);
+    const handlePlayPause = () => {
+        setIsPlaying(!isPlaying);
+    };
     return (
         <div className={style.music_item}>
             <p>{id}</p>
@@ -23,7 +28,7 @@ const MusicItem = ({ music }) => {
                 <p>{ artist }</p>
             </div>
             <p className={style.music_item_album} >{ album }</p>
-            <MusicPlayer music={music} /> 
+            <MusicPlayer music={music} isPlaying={isPlaying} onPlayPause={handlePlayPause} /> 
         </div>
     );
 };
