@@ -1,14 +1,79 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { editProfile } from '../../store/profile/profileActions';
+import style from './styles/Profile.module.css'
+import { setActiveProfile } from '../../store/profile/profileSlice';
+
 
 const ProfileModal = () => {
+  const { loading } = useSelector(state => state.profiles)
   const activeProfile = useSelector(state => state.profiles.activeProfile);
 
   const [profile, setProfile] = useState(activeProfile || { firstName: '', secondName: '', avatar: ''});
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (activeProfile) {
+      setProfile(activeProfile);
+    }
+  }, []);
+
+
+  const handleProfileUpdate = () => {
+    const updatedProfile = profile;
+    dispatch(setActiveProfile(updatedProfile))
+    localStorage.setItem('activeProfile', JSON.stringify(updatedProfile));
+    dispatch(editProfile(profile))
+    navigate("/homepage");
+  };
+  
 
   return (
-    <div>ProfileModal</div>
+    <>
+      {loading ? (
+        <h3>loading...</h3>
+      ) : (
+        <div className={style.modal}>
+          <div className={style.modal__wrapper}>
+            <div className={style.modal__nav}>
+              <h3 className={style.modal__title}>Profile info</h3>
+              <div className={style.nav__close} onClick={() => navigate('/homepage')}>
+                <img className={style.nav__close_img} src='' alt="Close" />
+              </div>
+            </div>
+
+
+                  <div className={style.modal__content} key={ activeProfile.id }>
+                      <div className={style.modal__img}>
+                        <img className={style.img__avatar} src={ profile.avatar } alt=" " />
+                      </div>
+
+                      <div className={style.modal__inputs}>
+
+                        <div className={style.input__box}>
+                        <input type="text" required placeholder='Name' className={style.form__input} onChange={(e) => setProfile({ ...profile, name: e.target.value, })} value={profile.name}  />
+                          <label> </label>
+                          <img src="" alt="" />
+                        </div>
+
+                        <div className={style.input__box}>
+                        <input type="text" required placeholder='Avatar' className={style.form__input} onChange={(e) => setProfile({ ...profile, avatar: e.target.value })}  />                     
+                          <label> </label>
+                          <img src="" alt="" />
+                        </div>
+
+                        <button className={style.modal__btn} onClick={handleProfileUpdate}>Save</button>
+
+                      </div>
+                  </div>
+
+          </div>
+        </div>
+      )} 
+    
+    </>
   )
 }
 

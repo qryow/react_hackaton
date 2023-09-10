@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-//import { getProfile } from '../../store/profile/profileActions'
+import React, { useState } from 'react';
 import style from './styles/Profile.module.css';
 import close from '../../images/close.png';
 import Profile from '../../components/Profile/Profile'
 
 const ProfileSideBar = () => { 
-  //const activeProfile = useSelector(state => state.profiles.actionProfile)
   const [isOpen, setIsOpen] = useState(false);
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -35,10 +28,7 @@ const ProfileSideBar = () => {
               <img className={style.nav__close_img} src={close} alt="" onClick={toggle} />
             </div>
           </div>
-
-          <Profile />
-          
-
+            <Profile />
         </div>
       </div>
     </>

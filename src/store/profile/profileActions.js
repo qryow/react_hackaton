@@ -2,7 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 import { PROFILE_API } from "../../helpers/consts";
 
-
 export const getProfile = createAsyncThunk(
   'profile/getProfile',
   async () => {
@@ -11,7 +10,6 @@ export const getProfile = createAsyncThunk(
     return res;
   }
 )
-
 
 export const createProfile = createAsyncThunk(
   'profile/createProfile',
@@ -23,37 +21,10 @@ export const createProfile = createAsyncThunk(
 
 export const editProfile = createAsyncThunk(
   'profile/editProfile',
-  async ( editedObj, { dispatch }) => {
-    let res = await axios.patch(`${PROFILE_API}/${editedObj.id}`, editedObj);
-    console.log(editedObj); 
-    dispatch(getProfile());
-    return res;
+  async ( editedObj ) => {
+    const updatedProfile = { ...editedObj };
+    console.log(updatedProfile)
+    const res = await axios.patch(`${PROFILE_API}/${editedObj.id}`, updatedProfile);
+    return res.data;
   }
 )
-
-//export const loadToCurrentProfile = createAsyncThunk(
-//  'profile/loadToCurrentProfile',
-//  async (id) => {
-//    let res = await axios.get(`${PROFILE_API}/${id}`);
-//    return res.data;
-//  }
-//)
-
-
-//export const getOneProfile = createAsyncThunk(
-//  'profile/getOneProfile',
-//  async (id) => {
-//    let res = await axios.get(`${PROFILE_API}/${id}`);
-//    return res;
-//  }
-//)
-
-//export const editProfile = createAsyncThunk(
-//  'profile/editProfile',
-//  async ( editedObj, { dispatch }) => {
-//    let res = await axios.patch(`${PROFILE_API}/${editedObj.id}`, editedObj);
-//    console.log(editedObj); 
-//    dispatch(getProfile());
-//    return res;
-//  }
-//)

@@ -14,12 +14,6 @@ const Register = () => {
     username: '',
     password: ''
   });
-  
-  //const [profile, setProfile] = useState({
-  //  firstName: user.username,
-  //  secondName: '',
-  //  avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
-  //});
 
   const registerAndCreateProfile = async () => {
     const registrationResult = await dispatch(registerUser({ user, navigate }));
@@ -30,8 +24,8 @@ const Register = () => {
         return registrationResult;
       } else {
         const updatedProfile = {
-          firstName: user.username,
-          secondName: '',
+          username: user.username,
+          name: user.username,
           avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
         };
       dispatch(createProfile(updatedProfile))
@@ -99,12 +93,6 @@ const Register = () => {
                         <label>Password</label>
                         <img src="" alt="" />
                       </div>  
-
-                      {/*<div className={style.input__box}>
-                          <input type="text" required className={style.form__input} onChange={(e) => setProfile({ ...profile, firstName: e.target.value })} />
-                          <label>Profile name</label>
-                          <img src="" alt="" />
-                        </div>*/}
 
                           <button
                             className={style.form__button}

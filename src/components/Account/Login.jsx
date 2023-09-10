@@ -30,17 +30,15 @@ const Login = () => {
   const handleLogin = () => {
     let foundProfile;
     if (Array.isArray(profiles.profiles)) {
-      foundProfile = profiles.profiles.find(profile => profile.firstName === user.username); 
-      //console.log(foundProfile);
+      foundProfile = profiles.profiles.find(profile => profile.username === user.username); 
       if (foundProfile) {
         dispatch(setActiveProfile(foundProfile));
-      } else {
-        // Если профиль не найден, вы можете отправить действие с пустым профилем
-        dispatch(setActiveProfile(null));
       }
     }
     dispatch(loginUser({ user, navigate }));
-    console.log(foundProfile)
+    const activeProfile = foundProfile
+    localStorage.setItem('activeProfile', JSON.stringify(activeProfile));
+    //console.log(foundProfile)
   };
 
 
@@ -94,11 +92,11 @@ const Login = () => {
                           <img src="" alt="" />
                         </div>
 
-                        {/*<button className={style.form__button} onClick={() => dispatch(loginUser({ user, navigate }))}>Login</button>*/}
                         <button className={style.form__button} onClick={() => {
                           dispatch(loginUser({ user, navigate }));
                           handleLogin();
                         }}>Login</button>
+                        
                       </form>
                     </div>
                   </div>
