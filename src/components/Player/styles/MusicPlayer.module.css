@@ -1,12 +1,47 @@
 .player__block {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   z-index: 4;
-  width: 100%;
+  width: 99%;
   height: 150px;
-  background-color: #000;
+  margin: 10px 10px 0px 10px;
+  background-color: #0a0a0a;
+  border-radius: 10px;
+  display: flex;
+}
+
+.current__song {
+  width: 22%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.img__block {
+  width: 25%;
+}
+.song__img {
+  width: 100%;
+}
+
+.song__info {
+  width: 35%;
+  margin-left: 20px;
+}
+.song__name {
+  margin-bottom: 10px;
+}
+
+.player__wrapper {
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.play__wrapper {
+  width: 5%;
+}
+.play_pause {
+  width: 100%;
 }
