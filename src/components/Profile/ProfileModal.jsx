@@ -27,7 +27,7 @@ const ProfileModal = ({active, setActive}) => {
     dispatch(setActiveProfile(updatedProfile))
     localStorage.setItem('activeProfile', JSON.stringify(updatedProfile));
     dispatch(editProfile(profile))
-    navigate("/homepage");
+    setActive(false)
   };
   
 

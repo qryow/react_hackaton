@@ -3,17 +3,23 @@ import style from '../../styles/index.module.css';
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
+import { setSelectedSong } from '../../store/musics/musicSlice';
 
 const MusicItem = ({ music }) => {
     const { title, artist, artwork, album, url, id } = music;
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    const handleMusicClick = () => {
+      dispatch(setSelectedSong(music)); // Диспетчеризируем действие с выбранной песней
+    };
+
     return (
         <div className={style.music_item}>
             <p>{id}</p>
             <img
-                onClick={() => navigate(`/musics/${id}`)}
+                onClick={handleMusicClick}
                 src={artwork}
                 alt={artwork}
             />
