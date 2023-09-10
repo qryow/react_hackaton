@@ -6,10 +6,12 @@ import style from '../styles/index.module.css';
 
 const SearchPage = () => {
     return (
-        <div className={style.content}>
+        <div className={style.wrapper}>
             <Navbar />
-            <SearchNavbar />
-            <MusicListPage />
+            <div className={style.nav_list__wrapper}>
+              <SearchNavbar />
+              <MusicListPage />
+            </div>
         </div>
     );
 };

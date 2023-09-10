@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { editProfile } from '../../store/profile/profileActions';
 import style from './styles/Profile.module.css'
 import { setActiveProfile } from '../../store/profile/profileSlice';
+import close from '../../images/close.png'
 
 
-const ProfileModal = () => {
+const ProfileModal = ({active, setActive}) => {
   const { loading } = useSelector(state => state.profiles)
   const activeProfile = useSelector(state => state.profiles.activeProfile);
 
@@ -35,12 +36,12 @@ const ProfileModal = () => {
       {loading ? (
         <h3>loading...</h3>
       ) : (
-        <div className={style.modal}>
-          <div className={style.modal__wrapper}>
+        <div className={active ? `${style.modal} ${style.active}` : `${style.modal}`} onClick={() => setActive(false)}>
+          <div className={active ? `${style.modal__wrapper} ${style.active}` : `${style.modal__wrapper}`} onClick={e => e.stopPropagation()}>
             <div className={style.modal__nav}>
               <h3 className={style.modal__title}>Profile info</h3>
               <div className={style.nav__close} onClick={() => navigate('/homepage')}>
-                <img className={style.nav__close_img} src='' alt="Close" />
+                <img className={style.nav__close_img} src={close} alt="Close" onClick={() => setActive(false)} />
               </div>
             </div>
 

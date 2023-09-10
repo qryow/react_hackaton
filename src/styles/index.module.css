@@ -5,22 +5,34 @@
     color: #B3B3B3;
 }
 
-.content{
+.wrapper{
   display: flex;
-  justify-content: space-between;
-  background: #1d1c1c;
-    width: 100%;
-    height: 200vh;
-    background-color: #121212;
+  /*justify-content: space-between;*/
+  width: 100%;
+  height: 100vh;
+  background-color: #0a0a0a;
+}
+.btn {
+  position: absolute;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  /*margin-left: 500px;*/
 }
 
+.content {
+  width: 78%;
+}
 /* !Navbar */
 
 .navbar {
-    width: 20%;
-    height: 100%;
-    position: fixed;
-    background: black;
+    position: relative;
+    width: 22%;
+    height: 98%;
+    margin: 10px;
+    background-color: #141414;
+    border-radius: 10px;
+    /*background: black;*/
     display: flex;
     flex-direction: column;
 }
@@ -29,19 +41,20 @@
 .navbar > img {
     width: 150px;
     height: auto;
-    margin-left: 10%;
-    margin-top: 5%;
+    margin-left: 5%;
+    margin-top: 10%;
 }
 
 .navbar_list{
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
-    margin-left: 10%;
+    margin-top: 15%;
+    margin-left: 7%;
 }
 
 .list{
     margin: 5px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -70,7 +83,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 15%;
+    /*margin: 15%;*/
+    margin-left: 2%;
     position: absolute;
     bottom: 3%;
 }
@@ -81,9 +95,9 @@
 
 /* !music List */
 .music_list{
-    width: 75%;
+    width: 100%;
     height: auto;
-    margin-left: 20%;
+    /*margin-left: 20%;*/
     display: flex;
     flex-direction: column;
     background: none;
@@ -148,11 +162,18 @@ hr{
 
 /* !Search Navbar */
 
+.nav_list__wrapper {
+  width: 78%;
+  margin: 10px 10px 10px 0;
+}
+
 .search_navbar{
-    width: 80%;
+    width: 100%;
     height: 60px;
-    background-color: black;
-    margin-left: 20%;
+    background-color: #141414;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    /*margin-left: 20%;*/
     display: flex;
     align-items: center;
 }

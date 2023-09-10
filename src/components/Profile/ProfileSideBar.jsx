@@ -1,36 +1,62 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import style from './styles/Profile.module.css';
 import close from '../../images/close.png';
 import Profile from '../../components/Profile/Profile'
+import ProfileModal from './ProfileModal';
 
-const ProfileSideBar = () => { 
-  const [isOpen, setIsOpen] = useState(false);
+const ProfileSideBar = ({active, setActive}) => { 
+  const [modalActive, setModalActive] = useState(true)
+  //const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+  const activeProfile = useSelector(state => state.profiles.activeProfile);
 
-  const profileClasses = isOpen
-    ? `${style.profile__wrapper} ${style.open}`
-    : `${style.profile__wrapper} ${style.close}`;
+  //const toggle = () => {
+  //  setIsOpen(!isOpen);
+  //};
+
+  //const profileClasses = isOpen
+  //  ? `${style.profile__wrapper} ${style.open}`
+  //  : `${style.profile__wrapper} ${style.close}`;
+
+    if (!activeProfile) {
+      return (
+        <div>
+          <p>No active profile selected</p>
+        </div>
+      );
+    }
 
   return (
     <>
-      <div className={style.navbar__wrapper}></div>
+      {/*<div className={style.navbar__wrapper}></div>*/}
 
-      <button onClick={toggle}>Profile</button>
+      {/*<button onClick={toggle}>Profile</button>*/}
 
-      <div className={profileClasses}>
-        <div className={style.profile__account}>
-          <div className={style.profile__nav}>
-            <h3 className={style.nav__title}>Profile</h3>
-            <div className={style.nav__close}>
-              <img className={style.nav__close_img} src={close} alt="" onClick={toggle} />
+      {/*<div className={profileClasses}>*/}
+      <div className={active ? `${style.wrapper} ${style.active}` : `${style.wrapper}`} onClick={() => setActive(false)}>
+        <div className={active ? `${style.profile__wrapper} ${style.active}` : `${style.profile__wrapper}`} onClick={e => e.stopPropagation()}>
+          <div className={style.profile__account}>
+            <div className={style.profile__nav}>
+              <h3 className={style.nav__title}>Profile</h3>
+              <div className={style.nav__close}>
+                <img className={style.nav__close_img} src={close} alt="" onClick={() => setActive(false)} />
+              </div>
+            </div>
+            <div className={style.profile__content} key={ activeProfile.id }  >
+              <div className={style.profile__img} onClick={() => setModalActive(true)}>
+                <img className={style.img__avatar} src={ activeProfile.avatar } alt="" />
+              </div>
+              <div className={style.profile__info}>
+                <h3 className={style.profile__name}> { activeProfile.name } </h3>
+              </div>
             </div>
           </div>
-            <Profile />
         </div>
+        
       </div>
+      {/*</div>*/}
+      <ProfileModal active={modalActive} setActive={setModalActive} />
     </>
   );
 };
