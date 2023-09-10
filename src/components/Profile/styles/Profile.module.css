@@ -1,17 +1,35 @@
+.wrapper {
+  position: absolute;
+  right: 0;
+  width: 28%;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s;
+}
+.wrapper.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .profile__wrapper {
   position: relative;
   margin: 10px;
-  width: 30%;
-  background-color: #242424;
+  width: 100%;
+  background-color: #141414;
   border-radius: 10px;
   overflow: hidden;
+  /*opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;*/
 }
-.close {
-  display: none;
-}
-.open {
-  display: inherit;
-}
+/*.profile__wrapper.active {
+  opacity: 1;
+  pointer-events: all;
+}*/
 
 .navbar__wrapper {
   width: 12.6%;
@@ -23,7 +41,8 @@
 
 .profile__account {
   height: 370px;
-  background-color: #2e2e2e;
+  /*background-color: #131313;*/
+
 }
 
 .profile__nav {
@@ -55,12 +74,12 @@
 }
 
 .profile__img {
-  width: 30%;
-  height: 153px;
+  width: 35%;
+  height: 155px;
   border-radius: 50%;
   filter: drop-shadow(0 0 30px rgb(0, 0, 0));
   overflow: hidden;
-  background: linear-gradient(to right, #1d1f1f, #3a3a3a);
+  background: linear-gradient(to right, #171818, #222222);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,19 +116,30 @@
 
 /** modal */
 .modal {
+  position: absolute;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba( 1, 1, 1, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s;
+  z-index: 3;
+
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .modal__wrapper {
   width: 40%;
   padding: 35px 45px;
   border-radius: 15px;
-  background-color: #2e2e2e;
+  background-color: #141414;
 }
 .modal__nav {
   display: flex;
@@ -131,7 +161,6 @@
 }
 .img__wrapper {
   width: 35%;
-  /*margin-bottom: 30px;*/
 }
 .modal__img {
   width: 250px;
@@ -148,40 +177,25 @@
 }
 
 
-
-
-
-
 .modal__inputs{
   width: 45%;
   margin-right: 40px;
-  /*margin-bottom: 30px;*/
 }
 .input__box {
   position: relative;
   margin: 0px 0 20px;
-  border-bottom: 2px solid #fff;
+  /*border-bottom: 2px solid #fff;*/
 }
-.input__box label {
-  position: absolute;
-  top: 45%;
-  left: 10px;
-  transform: translateY(-50%);
-  font-size: 25px;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.input__box input:focus~label,
-.input__box input:valid~label {
-  top: -5px;
-  left: 0px;
+.form__input::placeholder {
+  color: rgb(168, 168, 168);
+  /*margin-left: 10px;*/
 }
 .form__input {
   width: 100%;
   height: 50px;
-  background: transparent;
+  background: #111111;
+  border-radius: 10px;
+  padding-left: 10px;
   border: none;
   outline: none;
   color: #fff;

@@ -6,7 +6,8 @@ import style from './Registration.module.css';
 
 import { loginUser } from '../../store/account/userAction';
 import { clearStatusState, clearUserState } from '../../store/account/userSlice';
-import { createProfile } from '../../store/profile/profileActions'
+import { setActiveProfile } from '../../store/profile/profileSlice'
+import { getProfile } from '../../store/profile/profileActions';
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -14,13 +15,8 @@ const Login = () => {
     password: ""
   });
 
-  const [profile, setProfile] = useState({
-    firstName: "",
-    secondName: "",
-    avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
-  })
-
   const { loading, status } = useSelector(state => state.user);
+  const profiles = useSelector(state => state.profiles);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,7 +24,22 @@ const Login = () => {
   useEffect(() => {
     dispatch(clearStatusState());
     dispatch(clearUserState());
+    dispatch(getProfile())
   }, []);
+
+  const handleLogin = () => {
+    let foundProfile;
+    if (Array.isArray(profiles.profiles)) {
+      foundProfile = profiles.profiles.find(profile => profile.username === user.username); 
+      if (foundProfile) {
+        dispatch(setActiveProfile(foundProfile));
+      }
+    }
+    dispatch(loginUser({ user, navigate }));
+    const activeProfile = foundProfile
+    localStorage.setItem('activeProfile', JSON.stringify(activeProfile));
+    //console.log(foundProfile)
+  };
 
 
   return (
@@ -81,16 +92,11 @@ const Login = () => {
                           <img src="" alt="" />
                         </div>
 
-                        <div className={style.input__box}>
-                          <input type="text" required className={style.form__input} onChange={(e) => setProfile({ ...profile, firstName: e.target.value })} />
-                          <label>Profile name</label>
-                          <img src="" alt="" />
-                        </div>
-
                         <button className={style.form__button} onClick={() => {
-                          dispatch(loginUser({ user, navigate }))
-                          dispatch(createProfile(profile));
-                          }}>Login</button>
+                          dispatch(loginUser({ user, navigate }));
+                          handleLogin();
+                        }}>Login</button>
+                        
                       </form>
                     </div>
                   </div>

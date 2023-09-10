@@ -1,10 +1,10 @@
 {
   "profiles": [
     {
-      "firstName": "Elmar",
-      "secondName": "ramle",
-      "avatar": "https://i.pinimg.com/236x/3b/8b/d5/3b8bd5625f175014386f7ed7a1027243.jpg",
-      "id": 2
+      "username": "elmar",
+      "name": "elmar",
+      "avatar": "https://i.pinimg.com/236x/b4/d0/ca/b4d0ca2e77687b20afd19612a4c12e5f.jpg",
+      "id": 1
     }
   ],
   "musics": [

@@ -6,12 +6,31 @@ import style from './Registration.module.css'
 
 import { registerUser } from '../../store/account/userAction';
 import { clearStatusState } from '../../store/account/userSlice';
+import { createProfile } from '../../store/profile/profileActions'
+
 
 const Register = () => {
   const [user, setUser] = useState({
     username: '',
     password: ''
   });
+
+  const registerAndCreateProfile = async () => {
+    const registrationResult = await dispatch(registerUser({ user, navigate }));
+
+      if (registrationResult.status === "error") {
+        console.error('error:', registrationResult.error);
+        registrationResult.error = 'Ошибка при регистрации';
+        return registrationResult;
+      } else {
+        const updatedProfile = {
+          username: user.username,
+          name: user.username,
+          avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
+        };
+      dispatch(createProfile(updatedProfile))
+    }
+  }
 
   const { loading, status } = useSelector((state) => state.user);
 
@@ -27,7 +46,7 @@ const Register = () => {
     <>
     <div className={style.body}>
       <div className={style.content}>
-        {loading ? (
+        {loading ? (  
               <div className={style.boxContainer}>
                 <div className={`${style.box} ${style.box1}`}></div>
                 <div className={`${style.box} ${style.box2}`}></div>
@@ -75,7 +94,12 @@ const Register = () => {
                         <img src="" alt="" />
                       </div>  
 
-                      <button className={style.form__button} onClick={() => dispatch(registerUser({user, navigate}))}>Sign up</button>
+                          <button
+                            className={style.form__button}
+                            onClick={registerAndCreateProfile}
+                          >
+                            register
+                          </button>
 
                       <div className={style.link}>
                         <p className={style.link__text}>Do you have an account ?</p>
