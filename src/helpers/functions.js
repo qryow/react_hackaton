@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { ACCOUNT_API } from './consts';
+import '../components/Profile/styles/Profile.module.css'
+
+//* registration
 
 export const addDataToLocalStorage = (user, tokens) => {
   localStorage.setItem('user', JSON.stringify(user));
@@ -15,3 +18,7 @@ export const updateToken = () => {
     localStorage.setItem('tokens', JSON.stringify({ refresh: tokens.refresh, access: res.data.access }));
   }, 1000 * 60 * 9);
 };
+
+
+//* sidebar
+

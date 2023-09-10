@@ -6,6 +6,8 @@ import style from './Registration.module.css';
 
 import { loginUser } from '../../store/account/userAction';
 import { clearStatusState, clearUserState } from '../../store/account/userSlice';
+import { setActiveProfile } from '../../store/profile/profileSlice'
+import { getProfile } from '../../store/profile/profileActions';
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -14,6 +16,7 @@ const Login = () => {
   });
 
   const { loading, status } = useSelector(state => state.user);
+  const profiles = useSelector(state => state.profiles);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -21,7 +24,22 @@ const Login = () => {
   useEffect(() => {
     dispatch(clearStatusState());
     dispatch(clearUserState());
+    dispatch(getProfile())
   }, []);
+
+  const handleLogin = () => {
+    let foundProfile;
+    if (Array.isArray(profiles.profiles)) {
+      foundProfile = profiles.profiles.find(profile => profile.username === user.username); 
+      if (foundProfile) {
+        dispatch(setActiveProfile(foundProfile));
+      }
+    }
+    dispatch(loginUser({ user, navigate }));
+    const activeProfile = foundProfile
+    localStorage.setItem('activeProfile', JSON.stringify(activeProfile));
+    //console.log(foundProfile)
+  };
 
 
   return (
@@ -74,7 +92,11 @@ const Login = () => {
                           <img src="" alt="" />
                         </div>
 
-                        <button className={style.form__button} onClick={() => dispatch(loginUser({ user, navigate }))}>Login</button>
+                        <button className={style.form__button} onClick={() => {
+                          dispatch(loginUser({ user, navigate }));
+                          handleLogin();
+                        }}>Login</button>
+                        
                       </form>
                     </div>
                   </div>
