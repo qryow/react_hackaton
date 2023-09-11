@@ -9,6 +9,7 @@ const CreateMusic = () => {
     artist: "",
     artwork: "",
     album: "",
+    janre: "",
     url: ""
   });
 
@@ -23,7 +24,7 @@ const CreateMusic = () => {
         <input
           type="text"
           placeholder="Name of song"
-          onChange={(e) => setMusic({ ...music, name: e.target.value })}
+          onChange={(e) => setMusic({ ...music, title: e.target.value })}
         />
         <input
           type="text"
@@ -41,6 +42,11 @@ const CreateMusic = () => {
           type="text"
           placeholder="Album of song"
           onChange={(e) => setMusic({ ...music, album: e.target.value })}
+        />
+        <input
+          type="text"
+          placeholder="Janre of song"
+          onChange={(e) => setMusic({ ...music, janre: e.target.value })}
         />
         <input
           type="url"
