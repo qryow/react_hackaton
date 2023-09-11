@@ -23,11 +23,11 @@ const ProfileModal = ({active, setActive}) => {
 
 
   const handleProfileUpdate = () => {
-    console.log(profile);
-    dispatch(setActiveProfile(profile));
-    localStorage.setItem('activeProfile', JSON.stringify(profile));
-    dispatch(editProfile(profile));
-    navigate("/homepage");
+    const updatedProfile = profile;
+    dispatch(setActiveProfile(updatedProfile))
+    localStorage.setItem('activeProfile', JSON.stringify(updatedProfile));
+    dispatch(editProfile(profile))
+    setActive(false)
   };
   
   

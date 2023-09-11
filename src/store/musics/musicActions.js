@@ -21,26 +21,18 @@ export const createMusic = createAsyncThunk(
 
 export const deleteMusic = createAsyncThunk(
   'musics/deleteMusic',
-  async ({ id }, { dispatch }) => {
-    await axios.delete(`${MUSICS_API}/${id}`);
-    dispatch(getMusics());
+  async ({ id }, {dispatch}) => {
+    await axios.delete(`${MUSICS_API}/${id}`)
+    dispatch(getMusics())
   }
-);
+)
 
 export const editMusic = createAsyncThunk(
-  "musics/editMusic",
-  async (editedObj, { dispatch }) => {
-    let res = await axios.patch(`${MUSICS_API}/${editedObj.id}`, editedObj);
-    dispatch(getMusics());
-    return res;
+  'profile/editMusic',
+  async ( editedObj ) => {
+    const updatedMusic = { ...editedObj };
+    console.log(updatedMusic)
+    const res = await axios.patch(`${MUSICS_API}/${editedObj.id}`, updatedMusic);
+    return res.data;
   }
-);
-
-export const getOneMusic = createAsyncThunk(
-  "musics/getOneMusic",
-  async ({ id }) => {
-    let res = await axios.get(`${MUSICS_API}/${id}`);
-    console.log(id);
-    return res;
-  }
-);
+)

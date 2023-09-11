@@ -1,0 +1,84 @@
+.player__block {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 99%;
+  height: 150px;
+  margin: 10px 10px 0px 10px;
+  background-color: #0a0a0a;
+  border-radius: 10px;
+  display: flex;
+}
+
+.current__song {
+  width: 22%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.img__block {
+  width: 25%;
+}
+.song__img {
+  width: 100%;
+}
+
+.song__info {
+  width: 35%;
+  margin-left: 20px;
+}
+.song__name {
+  margin-bottom: 10px;
+}
+
+.player__wrapper {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.play__wrapper {
+  width: 5%;
+}
+.play_pause {
+  width: 100%;
+}
+
+.player_wrapper {
+  width: 80%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player_block {
+  width: 80%;
+}
+.controls {
+  width: 15%;
+  height: 50px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation{
+  width: 100%;
+  .navigation_wrapper
+  {
+      min-width: 100%;
+      background-color: rgba(119, 119, 119, 0.781);
+      height: 5px;
+      border-radius: 30px;
+      cursor: pointer;
+      .seek_bar{
+          width: 0;
+          height: 100%;
+          background-color: rgb(255, 255, 255);
+          border-radius: 30px;
+      }
+  }
+}

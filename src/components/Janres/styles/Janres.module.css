@@ -1,0 +1,27 @@
+.janrs {
+  width: 100%;
+  height: 92.4%;
+  margin: 10px 0 0 0;
+  padding: 20px;
+  background-color: #141414;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.janrs__wrapper {
+  width: 100%;
+  height: 400px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  /*justify-content: space-between;*/
+  align-items: center;
+}
+.janr__block {
+  width: 23%;
+  height: 213px;
+  margin-right: 17px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+}

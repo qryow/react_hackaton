@@ -1,121 +1,71 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getOneMusic, editMusic } from '../../store/musics/musicActions';
-import { clearOneMusicState } from "../../store/musics/musicSlice";
-import style from '../../styles/index.module.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { editMusic, getMusics } from '../../store/musics/musicActions';
+import { setActiveProfile } from '../../store/profile/profileSlice';
+import close from '../../images/close.png'
+import style from './styles/MusicEdit.module.css'
 
+const MusicEdit = ({active, setActive}) => {
 
-const MusicEdit = ({ id }) => {
-    const { loading, oneMusic } = useSelector((state) => state.musics);
-    const [music, setMusic] = useState(oneMusic);
-    const dispatch = useDispatch();
+  const currentSong = useSelector(state => state.musics.selectedSong)
+  console.log(currentSong);
+  const [song, setSong] = useState(currentSong || { title: '', artwork: ''});
 
-    useEffect(() => {
-        dispatch(getOneMusic({ id }));
-        return () => dispatch(clearOneMusicState());
-    }, [id]);
-
-    useEffect(() => {
-        if (oneMusic) {
-            setMusic(oneMusic);
-        }
-    }, [oneMusic]);
-    console.log("Received id:", id);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
     return (
-        <>
-            {loading ? (
-                <h3>Loading...</h3>
-            ) : (
-                <>
-                    {music && (
-                        <div className={style.music_edit}>
-                            <h2>Edit form</h2>
-                            <div className={style.second_div}>
-                                <h4>Title:</h4>
-                                <input
-                                    className={style.edit_input}
-                                    type="text"
-                                    placeholder="Title"
-                                    onChange={(e) =>
-                                        setMusic({
-                                            ...music,
-                                            title: e.target.value,
-                                        })
-                                    }
-                                    value={music.title}
-                                />
-                                <h4>Picture:</h4>
-                                <input
-                                    className={style.edit_input}
-                                    type="url"
-                                    placeholder="Picture"
-                                    onChange={(e) =>
-                                        setMusic({
-                                            ...music,
-                                            artwork: e.target.value,
-                                        })
-                                    }
-                                    value={music.artwork}
-                                />
-                                <img
-                                    className={style.image_prev}
-                                    src={music.artwork}
-                                    alt=""
-                                />
-                                <h4>Artist:</h4>
-                                <input
-                                    className={style.edit_input}
-                                    type="text"
-                                    placeholder="Artist"
-                                    onChange={(e) =>
-                                        setMusic({
-                                            ...music,
-                                            artist: e.target.value,
-                                        })
-                                    }
-                                    value={music.artist}
-                                />
-                                <h4>Album:</h4>
-                                <input
-                                    className={style.edit_input}
-                                    type="text"
-                                    placeholder="Album"
-                                    onChange={(e) =>
-                                        setMusic({
-                                            ...music,
-                                            album: e.target.value,
-                                        })
-                                    }
-                                    value={music.album}
-                                />
-                                <h4>Url Music:</h4>
-                                <input
-                                    className={style.edit_input}
-                                    type="url"
-                                    placeholder="Url Music"
-                                    onChange={(e) =>
-                                        setMusic({
-                                            ...music,
-                                            url: e.target.value,
-                                        })
-                                    }
-                                    value={music.url}
-                                />
-                            </div>
+      <>
+        <div className={active ? `${style.modal} ${style.active}` : `${style.modal}`} onClick={() => setActive(false)}>
+          <div className={active ? `${style.modal__wrapper} ${style.active}` : `${style.modal__wrapper}`} onClick={e => e.stopPropagation()}>
+            <div className={style.modal__nav}>
+              <h3 className={style.modal__title}>Music edit</h3>
+              <div className={style.nav__close} onClick={() => navigate('/search')}>
+                <img className={style.nav__close_img} src={close} alt="Close" onClick={() => setActive(false)} />
+              </div>
+            </div>
 
-                            <button
-                                className={style.edit_btn}
-                                onClick={() => {
-                                    dispatch(editMusic(music));
-                                }}
-                            >
-                                Save
-                            </button>
+
+                  <div className={style.modal__content} key={ currentSong.id }>
+                      <div className={style.modal__img}>
+                        <img className={style.img__avatar} src={ song.artwork} alt=" " />
+                      </div>
+
+                      <div className={style.modal__inputs}>
+
+                        <div className={style.input__box}>
+                        <input type="text" required placeholder='Name of song' className={style.form__input} onChange={(e) => setSong({ ...song, title: e.target.value})} value={song.title}  />
+                          <label> </label>
+                          <img src="" alt="" />
                         </div>
-                    )}
-                </>
-            )}
-        </>
+
+                        <div className={style.input__box}>
+                        <input type="text" required placeholder='URL for poster' className={style.form__input} onChange={(e) => setSong({ ...song, artwork: e.target.value })} />                     
+                          <label> </label>
+                          <img src="" alt="" />
+                        </div>
+
+                        {/*<div className={style.input__box}> //! Artist name
+                        <input type="text" required placeholder='' className={style.form__input}  />                     
+                          <label> </label>
+                          <img src="" alt="" />
+                        </div>*/}
+
+
+                        <button className={style.modal__btn} onClick={() => {
+                          dispatch(editMusic(song));
+                          dispatch(getMusics())
+                          setActive(false)
+                        }}>Save</button>
+
+                      </div>
+                  </div>
+
+          </div>
+        </div>
+      
+      </>
     );
 };
 
