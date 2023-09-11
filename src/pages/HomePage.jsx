@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import style from '../styles/index.module.css'
 import Navbar from '../components/Navbar'
+import Player from '../components/Player/Player';
 import MusicListPage from './HomePage/MusicListPage';
 import ProfileSideBar from '../components/Profile/ProfileSideBar';
 import { setActiveProfile } from '../store/profile/profileSlice'; 
@@ -20,13 +21,18 @@ const HomePage = () => {
 
     return (
         <div className={style.wrapper}>
+            <Player />
             <Navbar />
             <div className={style.content}>
+              <div className={style.search_navbar}>
+                <button className={style.btn} onClick={() => setProfileActive(true)}></button>
+              </div>
+              <MusicListPage />
+            </div>
+            <div className={style.right__block}>
             </div>
             {/*<div className={style.profile__wrapper}></div>*/}
-              <button className={style.btn} onClick={() => setProfileActive(true)}></button>
             <ProfileSideBar active={profileActive} setActive={setProfileActive} />
-            {/*<MusicListPage />*/}
         </div>
     );
 };

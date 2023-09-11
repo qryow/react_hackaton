@@ -13,15 +13,26 @@
   background-color: #0a0a0a;
 }
 .btn {
-  position: absolute;
-  right: 30px;
+  position: relative;
   width: 50px;
   height: 50px;
-  /*margin-left: 500px;*/
+  margin-left: 850px;
 }
 
 .content {
-  width: 78%;
+  /*position: relative;*/
+  width: 50%;
+  height: 98%;
+  margin: 10px 0 0 0;
+}
+
+.right__block {
+  position: relative;
+  width: 28%;
+  height: 98%;
+  margin: 10px;
+  background-color: #141414;
+  border-radius: 10px;
 }
 /* !Navbar */
 
@@ -96,23 +107,26 @@
 /* !music List */
 .music_list{
     width: 100%;
-    height: auto;
-    /*margin-left: 20%;*/
+    height: 92.4%;
+    margin: 10px 0 0 0;
+    padding: 20px;
+    background-color: #141414;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background: none;
 }
 
 .top{
     display: flex;
+    margin-bottom: 15px;
 }
 
 .top_title{
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 .top_album{
-    margin-left: 35%;
+    margin-left: 30%;
 }
 
 .top_date{
@@ -120,7 +134,8 @@
 }
 
 .top > img{
-    margin-left: 10%;
+  width: 2%;
+  margin-left: 25%;
 }
 
 
@@ -152,7 +167,7 @@ hr{
 
 .music_item_album {
     position: absolute;
-    margin-left: 35%;
+    margin-left: 18%;
 }
 
 .music_title{
@@ -172,7 +187,7 @@ hr{
     height: 60px;
     background-color: #141414;
     border-radius: 10px;
-    margin-bottom: 30px;
+    /*margin-bottom: 10px;*/
     /*margin-left: 20%;*/
     display: flex;
     align-items: center;
