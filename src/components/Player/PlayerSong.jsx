@@ -54,9 +54,10 @@ const PlayerSong = ({audioElem, isPlaying, setIsPlaying, currentSong, setCurrent
 
   
   return (
-    <div className={style.player_wrapper}>
+    <>
+    {currentSong && (
+      <div className={style.player_wrapper}>
       <div className={style.player_block}>
-        <p> {currentSong.title } </p>
 
         <div className={style.controls} >
           <img src={prev} alt="error" onClick={skipBack} />
@@ -73,6 +74,9 @@ const PlayerSong = ({audioElem, isPlaying, setIsPlaying, currentSong, setCurrent
       </div>
 
     </div>
+    )}
+    </>
+    
   )
 }
 

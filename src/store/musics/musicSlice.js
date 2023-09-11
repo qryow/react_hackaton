@@ -15,7 +15,7 @@ const musicsSlice = createSlice({
     },
     setSelectedSong: (state, action) => {
       state.selectedSong = action.payload;
-      console.log(action.payload);
+      //console.log(action.payload);
     }
   },
   extraReducers: (builder) => {
