@@ -6,19 +6,17 @@ const ProfileSlice = createSlice({
   initialState: {
     profiles: [],
     activeProfile: null,
-    // primeStatus: false,
   },
   reducers: {
     setActiveProfile: (state, action) => {
       state.activeProfile = action.payload;
       console.log(action.payload);
     },
-    // updatePrimeStatus: (state, action) => {
-    //   if (state.activeProfile) {
-    //     state.activeProfile.primeStatus = action.payload;
-    //   }
-    //   state.primeStatus = action.payload;
-    // }
+    togglePrimeStatus: state => {
+      if (state.activeProfile) {
+        state.activeProfile.primeStatus = !state.activeProfile.primeStatus;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -28,5 +26,5 @@ const ProfileSlice = createSlice({
   },
 });
 
-export const { setActiveProfile, updatePrimeStatus } = ProfileSlice.actions;
+export const { setActiveProfile, togglePrimeStatus } = ProfileSlice.actions;
 export default ProfileSlice.reducer;

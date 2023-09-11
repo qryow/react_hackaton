@@ -728,3 +728,94 @@ hr{
 .footer_down > div > p:hover{
     color: #00ff37;
 }
+
+
+/* !Order Premium */
+
+.order_premium {
+    background-image: url('../img/orderBackroud.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.order_premium *{
+    color: white;
+}
+
+.order_premium_elements{
+    background: rgba(84, 0, 112, 0.582);
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40%;
+    justify-content: space-evenly;
+}
+
+.order_premium_elements_top{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.order_premium_elements_top > img{
+    width: 25%;
+}
+
+.dropdown_content{
+    display: flex;
+}
+
+.dropdown_content > a {
+    margin: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdown_content > a:hover {
+    transform: translateY(-5px);
+    opacity: 0.8;
+}
+
+.info_container > * {
+    margin: 10px;
+}
+
+.info_container > h2{
+    font-size: 27px;
+}
+
+.info_container > p{
+    font-size: 20px;
+}
+
+.homebtn{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.addbtn{
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+

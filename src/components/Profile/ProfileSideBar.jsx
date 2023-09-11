@@ -10,6 +10,7 @@ const ProfileSideBar = ({active, setActive}) => {
   //const [isOpen, setIsOpen] = useState(false);
 
   const activeProfile = useSelector(state => state.profiles.activeProfile);
+  console.log(activeProfile);
 
   //const toggle = () => {
   //  setIsOpen(!isOpen);

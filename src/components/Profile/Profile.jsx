@@ -7,6 +7,7 @@ import ProfileModal from './ProfileModal';
 const ProfileComponent = () => {
   const [modalActive, setModalActive] = useState(true)
   const activeProfile = useSelector(state => state.profiles.activeProfile);
+  console.log(activeProfile);
 
   const navigate = useNavigate();
 

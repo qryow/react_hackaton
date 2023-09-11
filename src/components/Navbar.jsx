@@ -12,6 +12,9 @@ import create2 from '../img/create2.svg';
 import liked from '../img/liked.svg';
 import liked2 from '../img/liked2.svg';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProfile } from '../store/profile/profileActions';
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -86,6 +89,14 @@ const Navbar = () => {
     navigate('/liked');
   };
 
+  const dispatch = useDispatch();
+
+  // dispatch(getProfile())
+  const user = useSelector(state => state.profiles.activeProfile);
+  console.log(user);
+  const primeStatus = user ? user.primeStatus : true;
+  console.log(primeStatus)
+
 
   return (
     <div className={style.navbar}>
@@ -121,12 +132,14 @@ const Navbar = () => {
         <p>Cookies</p>
         <p>About Ads</p>
       </div>
-      {isContextMenuOpen && (
+      {isContextMenuOpen &&(
         <div className={style.context_menu}>
+          {primeStatus && (
             <button onClick={handleCreateClick}>
               <img src={createImage} alt="" />
               Create Music
             </button>
+          )}
           <div>Item 2</div>
           <div>Item 3</div>
         </div>
