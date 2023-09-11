@@ -8,7 +8,6 @@ import SearchPage from '../pages/SearchPage'
 import LibraryPage from '../pages/LibraryPage'
 import CreatePage from '../pages/CreatePage'
 import LikedPage from '../pages/LikedPage'
-import CreateMusicPage from '../pages/CreateMusicPage'
 import PremiumAccPage from '../pages/PremiumAccPage'
 import EditProfilePage from '../pages/ProfilePages/EditProfilePage'
 
@@ -56,16 +55,11 @@ const MainRouter = () => {
     },
     {
       id: 9,
-      path: '/create-music',
-      element: <CreateMusicPage />
-    },
-    {
-      id: 10,
       path: '/profile-edit/:id',
       element: <EditProfilePage />
     },
     {
-      id: 11,
+      id: 10,
       path: '/premium',
       element: <PremiumAccPage />
     }

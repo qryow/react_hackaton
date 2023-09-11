@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import MusicListPage from './HomePage/MusicListPage';
 import ProfileSideBar from '../components/Profile/ProfileSideBar';
 import { setActiveProfile } from '../store/profile/profileSlice'; 
+import MusicEdit from '../components/Musics/MusicEdit';
 
 const HomePage = () => {
   const [profileActive, setProfileActive] = useState(true)
@@ -23,10 +24,11 @@ const HomePage = () => {
             <Navbar />
             <div className={style.content}>
             </div>
-            {/*<div className={style.profile__wrapper}></div>*/}
+            <div className={style.profile__wrapper}></div>
               <button className={style.btn} onClick={() => setProfileActive(true)}></button>
             <ProfileSideBar active={profileActive} setActive={setProfileActive} />
-            {/*<MusicListPage />*/}
+            <MusicListPage />
+            <MusicEdit />
         </div>
     );
 };

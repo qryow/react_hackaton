@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { editProfile } from '../../store/profile/profileActions';
 import style from './styles/Profile.module.css'
-import { setActiveProfile } from '../../store/profile/profileSlice';
+import { setActiveProfile, updatePrimeStatus } from '../../store/profile/profileSlice';
 import close from '../../images/close.png'
 
 
@@ -23,12 +23,14 @@ const ProfileModal = ({active, setActive}) => {
 
 
   const handleProfileUpdate = () => {
-    const updatedProfile = profile;
-    dispatch(setActiveProfile(updatedProfile))
-    localStorage.setItem('activeProfile', JSON.stringify(updatedProfile));
-    dispatch(editProfile(profile))
+    console.log(profile);
+    dispatch(setActiveProfile(profile));
+    localStorage.setItem('activeProfile', JSON.stringify(profile));
+    dispatch(editProfile(profile));
+    dispatch(updatePrimeStatus(false));
     navigate("/homepage");
   };
+  
   
 
   return (

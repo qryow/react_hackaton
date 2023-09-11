@@ -5,10 +5,14 @@ const musicsSlice = createSlice({
   name: 'musics',
   initialState: {
     loading: false,
+    oneMusic: null,
     musics: [],
     search: ''
   },
   reducers: {
+    clearOneMusicState: (state) => {
+      state.oneMusic = null;
+  },
     changeSearchVal: (state, action) => {
       state.search = action.payload.search;
   }
@@ -28,5 +32,5 @@ const musicsSlice = createSlice({
   }
 })
 
-export const { changeSearchVal } = musicsSlice.actions;
+export const { clearOneMusicState, changeSearchVal } = musicsSlice.actions;
 export default musicsSlice.reducer;

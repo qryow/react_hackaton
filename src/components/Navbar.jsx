@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import style from '../styles/index.module.css';
 import spotify from '../img/spotify icon.svg';
 import home from '../img/home.svg';
@@ -20,6 +20,26 @@ const Navbar = () => {
   const [libraryImage, setLibraryImage] = useState(library);
   const [createImage, setCreateImage] = useState(create);
   const [likedImage, setLikedImage] = useState(liked);
+
+  const [isContextMenuOpen, setContextMenuOpen] = useState(false);
+  const contextMenuRef = useRef(null);
+
+  const handleMenuCreate = () => {
+    setContextMenuOpen(!isContextMenuOpen);
+  };
+
+  const handleOutsideClick = (e) => {
+    if (contextMenuRef.current && !contextMenuRef.current.contains(e.target)) {
+      setContextMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
 
   const handleHomeClick = () => {
     setHomeImage(home2);
@@ -84,9 +104,9 @@ const Navbar = () => {
           Your Library
         </button>
         <div className={style.down_buttons}>
-          <button onClick={handleCreateClick} className={style.list}>
+          <button onClick={handleMenuCreate} className={style.list} ref={contextMenuRef}>
             <img src={createImage} alt="" />
-            Create Playlist
+            Create
           </button>
           <button onClick={handleLikedClick} className={style.list}>
             <img src={likedImage} alt="" />
@@ -101,6 +121,16 @@ const Navbar = () => {
         <p>Cookies</p>
         <p>About Ads</p>
       </div>
+      {isContextMenuOpen && (
+        <div className={style.context_menu}>
+            <button onClick={handleCreateClick}>
+              <img src={createImage} alt="" />
+              Create Music
+            </button>
+          <div>Item 2</div>
+          <div>Item 3</div>
+        </div>
+      )}
     </div>
   );
 }
