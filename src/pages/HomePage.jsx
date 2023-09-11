@@ -31,7 +31,6 @@ const HomePage = () => {
             </div>
             <div className={style.right__block}>
             </div>
-            {/*<div className={style.profile__wrapper}></div>*/}
             <ProfileSideBar active={profileActive} setActive={setProfileActive} />
         </div>
     );

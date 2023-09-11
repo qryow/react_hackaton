@@ -7,20 +7,12 @@ import { changeSearchVal } from '../../store/musics/musicSlice';
 
 const Input = () => {
     const [search, setSearch] = useState('');
-    console.log(search);
 
     const dispatch = useDispatch();
 
-    const searchBtn = (e) => {
-        e.preventDefault();
-        dispatch(changeSearchVal({ search }));
-        dispatch(getMusics(search));
-        console.log(search);
-    };
-
 
     return (
-        <form className={style.search_input} onSubmit={searchBtn}>
+        <form className={style.search_input} >
             <button type="submit">
             <img src={searchImg} alt="" />
             </button>
@@ -28,7 +20,12 @@ const Input = () => {
             type="text"
             placeholder="Artists, songs, or podcasts"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              e.preventDefault();
+              dispatch(changeSearchVal({ search }));
+              dispatch(getMusics());
+              setSearch(e.target.value)
+            }}
             />
         </form>
     );
