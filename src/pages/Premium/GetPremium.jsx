@@ -1,14 +1,16 @@
 import React from 'react';
 import style from '../../styles/index.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const GetPremium = () => {
+    const navigate = useNavigate();
     return (
         <div className={style.get_premium}>
             <div className={style.get_premium_left}>
             <h1>Ends soon: $0 for 3 months of Premium</h1>
             <p className={style.p1}>Don't miss ad-free music listening, offline playback, and more. Cancel anytime.</p>
             <div>
-                <button className={style.get_button} href="javascript:void(0)">
+                <button onClick={() => navigate('/premium-order')} className={style.get_button} href="javascript:void(0)">
                     <span>GET STARTED</span>
                     <div class={style.wave}></div>
                 </button>

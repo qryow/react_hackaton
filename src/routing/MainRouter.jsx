@@ -8,11 +8,11 @@ import SearchPage from '../pages/SearchPage'
 import LibraryPage from '../pages/LibraryPage'
 import CreatePage from '../pages/CreatePage'
 import LikedPage from '../pages/LikedPage'
-import CreateMusicPage from '../pages/CreateMusicPage'
 import PremiumAccPage from '../pages/PremiumAccPage'
 import EditProfilePage from '../pages/ProfilePages/EditProfilePage'
-//import OneJanre from '../components/Janres/OneJanre'
 import GenresPage from '../pages/GenresPage/GenresPage'
+import OrderPage from '../pages/Premium/OrderPage';
+
 
 const MainRouter = () => {
   const ROUTES = [
@@ -58,13 +58,13 @@ const MainRouter = () => {
     },
     {
       id: 9,
-      path: '/create-music',
-      element: <CreateMusicPage />
+      path: '/premium',
+      element: <PremiumAccPage />
     },
     {
       id: 10,
-      path: '/profile-edit/:id',
-      element: <EditProfilePage />
+      path: '/premium-order',
+      element: <OrderPage />
     },
     {
       id: 11,
@@ -76,6 +76,7 @@ const MainRouter = () => {
       path: '/musics/:janre',
       element: <GenresPage />
     }
+
   ]
 
   return (
