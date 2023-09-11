@@ -9,7 +9,10 @@ import LibraryPage from '../pages/LibraryPage'
 import CreatePage from '../pages/CreatePage'
 import LikedPage from '../pages/LikedPage'
 import PremiumAccPage from '../pages/PremiumAccPage'
+import EditProfilePage from '../pages/ProfilePages/EditProfilePage'
+import GenresPage from '../pages/GenresPage/GenresPage'
 import OrderPage from '../pages/Premium/OrderPage';
+
 
 const MainRouter = () => {
   const ROUTES = [
@@ -63,6 +66,17 @@ const MainRouter = () => {
       path: '/premium-order',
       element: <OrderPage />
     },
+    {
+      id: 11,
+      path: '/premium',
+      element: <PremiumAccPage />
+    },
+    {
+      id: 11,
+      path: '/musics/:janre',
+      element: <GenresPage />
+    }
+
   ]
 
   return (

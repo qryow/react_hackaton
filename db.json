@@ -1,33 +1,19 @@
 {
   "profiles": [
     {
-      "username": "7",
-      "name": "7",
-      "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
-      "primeStatus": false,
-      "id": 12
-    },
-    {
-      "username": "9",
-      "name": "9",
-      "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
-      "primeStatus": true,
-      "id": 13
-    },
-    {
-      "username": "9",
-      "name": "9",
-      "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
-      "primeStatus": true,
-      "id": 14
+      "username": "elmar",
+      "name": "Elmar",
+      "avatar": "https://i.pinimg.com/236x/b4/d0/ca/b4d0ca2e77687b20afd19612a4c12e5f.jpg",
+      "id": 1
     }
   ],
   "musics": [
     {
-      "title": "Death bed",
+      "title": "Death deb",
       "artist": "Powfu",
       "artwork": "https://samplesongs.netlify.app/album-arts/death-bed.jpg",
       "album": "Death Bed",
+      "janre": "pop",
       "url": "https://samplesongs.netlify.app/Death%20Bed.mp3",
       "id": 1
     },
@@ -36,6 +22,7 @@
       "artist": "Imagine Dragons",
       "artwork": "https://samplesongs.netlify.app/album-arts/bad-liar.jpg",
       "album": "qwe",
+      "janre": "pop",
       "url": "https://samplesongs.netlify.app/Bad%20Liar.mp3",
       "id": 2
     },
@@ -44,6 +31,7 @@
       "artist": "Alan Walker",
       "artwork": "https://samplesongs.netlify.app/album-arts/faded.jpg",
       "album": "qwe",
+      "janre": "electro",
       "url": "https://samplesongs.netlify.app/Faded.mp3",
       "id": 3
     },
@@ -52,6 +40,7 @@
       "artist": "Halsey",
       "artwork": "https://samplesongs.netlify.app/album-arts/without-me.jpg",
       "album": "qwe",
+      "janre": "pop",
       "url": "https://samplesongs.netlify.app/Without%20Me.mp3",
       "id": 4
     },
@@ -63,16 +52,6 @@
       "janre": "qwe",
       "url": "https://samplesongs.netlify.app/death%20bed.mp3",
       "id": 5
-    },
-    {
-      "name": "",
-      "artist": "1",
-      "artwork": "1",
-      "album": "1",
-      "janre": "1",
-      "url": "1",
-      "title": "1",
-      "id": 6
     }
   ]
 }
