@@ -28,8 +28,9 @@ const HomePage = () => {
               <div className={style.search_navbar}>
                 <button className={style.btn} onClick={() => setProfileActive(true)}></button>
               </div>
-              {/*<Janres />*/}
-              <MusicListPage />
+
+              <Janres />
+
             </div>
             <div className={style.right__block}>
             </div>

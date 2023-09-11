@@ -19,8 +19,8 @@ export const MusicPlayer = () => {
   
   useEffect(() => {
     if(songs.length) {
-      console.log(songs);
-      console.log(selectedSong);
+      //console.log(songs);
+      //console.log(selectedSong);
       setSelectedSongIndex(songs.findIndex(song => song === selectedSong));
     }
   }, [songs, selectedSong]);

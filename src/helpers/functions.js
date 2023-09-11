@@ -24,11 +24,10 @@ export const updateToken = () => {
 
 export const getJanres = async () => {
   const { data } = await axios.get(`${MUSICS_API}`)
-  const uniqueJanre = new Set(data.map(product => product.type))
+  const uniqueJanre = new Set(data.map(music => music.janre))
   const janres = [];
   for(let i of uniqueJanre) {
     janres.push(i)
   }
   return janres;
 }
-

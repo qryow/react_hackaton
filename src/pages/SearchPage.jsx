@@ -8,7 +8,7 @@ import style from '../styles/index.module.css';
 const SearchPage = () => {
     return (
         <div className={style.wrapper}>
-            <Player />
+          <Player />
             <Navbar />
             <div className={style.nav_list__wrapper}>
               <SearchNavbar />
