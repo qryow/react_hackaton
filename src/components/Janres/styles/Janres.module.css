@@ -22,7 +22,14 @@
   margin-right: 17px;
   margin-bottom: 20px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #272727;
+}
+.title__janre {
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 25px;
 }
 
 
