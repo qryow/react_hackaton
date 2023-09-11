@@ -38,7 +38,7 @@ const userSlice = createSlice({
       state.user = action.payload.user;
       addDataToLocalStorage(action.payload.user, action.payload.res.data);
       updateToken();
-      action.payload.navigate('/homepage');
+      action.payload.navigate('/search');
     })
     .addCase(loginUser.rejected, (state) => {
       state.loading = false;

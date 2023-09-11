@@ -70,7 +70,7 @@ const MusicItem = ({ music }) => {
 
         {modalActive && (
           <div
-            className={style.context_menu}
+            className={style.context_menu_item}
           >
             <div onClick={handleEditClick}>
               <FaEdit />

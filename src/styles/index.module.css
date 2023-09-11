@@ -9,7 +9,7 @@
   display: flex;
   /*justify-content: space-between;*/
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   background-color: #0a0a0a;
 }
 .btn {
@@ -17,6 +17,30 @@
   width: 50px;
   height: 50px;
   margin-left: 850px;
+}
+.avatar__wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-left: 860px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 30px rgb(0, 0, 0));
+  overflow: hidden;
+  background: linear-gradient(to right, #171818, #222222);
+  transition: 300ms ease;
+  cursor: pointer;
+}
+.avatar__wrapper:hover {
+  padding: 10px;
+}
+.avatar__nav {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: inherit;
+  user-select: none;
+  pointer-events: none;
 }
 
 .content {
@@ -106,6 +130,34 @@
     margin: 3%;
 }
 
+.context_menu {
+    position: fixed;
+    background: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    top: 350px;
+    left: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+.context_menu > button{
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.context_menu > button > *{
+    margin: 0 10px;
+}
+
 /* !music List */
 .music_list{
     width: 100%;
@@ -176,12 +228,43 @@ hr{
     color: white;
 }
 
+/* ContextMenu */
+
+.context_menu_item {
+    position: fixed;
+    background-color: #121212;
+    border-radius: 10px;
+    padding: 8px;
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.context_menu_button{
+    position: absolute;
+    left: 25%;
+    cursor: pointer;
+
+}
+  
+  
+  .context_menu_item > * {
+    cursor: pointer;
+    color: white;
+  }
+
+
 .context_menu_button {
   margin-left: 450px;
 }
-.context_menu {
+.context_menu_item {
   margin-left: 50px;
 }
+
 
 
 /* !Search Navbar */
@@ -687,4 +770,123 @@ hr{
 
 .footer_down > div > p:hover{
     color: #00ff37;
+}
+
+
+/* !Order Premium */
+
+.order_premium {
+    background-image: url('../img/orderBackroud.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.order_premium *{
+    color: white;
+}
+
+.order_premium_elements{
+    background: rgba(84, 0, 112, 0.582);
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40%;
+    justify-content: space-evenly;
+}
+
+.order_premium_elements_top{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.order_premium_elements_top > img{
+    width: 25%;
+}
+
+.dropdown_content{
+    display: flex;
+}
+
+.dropdown_content > a {
+    margin: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdown_content > a:hover {
+    transform: translateY(-5px);
+    opacity: 0.8;
+}
+
+.info_container > * {
+    margin: 10px;
+}
+
+.info_container > h2{
+    font-size: 27px;
+}
+
+.info_container > p{
+    font-size: 20px;
+}
+
+.homebtn{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.addbtn{
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* !Create Page */
+
+.create_music{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+width: 70%;
+}
+
+.create_music *{
+    color: white;
+}
+
+.create_music input{
+    background: none;
+    border: none;
+    font-size: 22px;
+}
+
+.create_music > button{
+    font-size: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }

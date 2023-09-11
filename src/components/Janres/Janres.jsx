@@ -38,7 +38,7 @@
             handleGenreClick(janre)
             navigate(`/musics/${janre}`)
           }}>
-            {janre}
+            <h2 className={style.title__janre}>{janre}</h2>
           </div>
         ))}
 

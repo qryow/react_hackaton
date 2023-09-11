@@ -2,8 +2,9 @@
   "profiles": [
     {
       "username": "elmar",
-      "name": "Elmar",
-      "avatar": "https://i.pinimg.com/236x/b4/d0/ca/b4d0ca2e77687b20afd19612a4c12e5f.jpg",
+      "name": "elmar",
+      "avatar": "https://i.pinimg.com/564x/c8/a6/16/c8a616e058bf562f5acb2f3b101dc876.jpg",
+      "primeStatus": true,
       "id": 1
     }
   ],

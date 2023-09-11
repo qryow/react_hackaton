@@ -5,7 +5,7 @@ import close from '../../images/close.png';
 import ProfileModal from './ProfileModal';
 
 const ProfileSideBar = ({active, setActive}) => { 
-  const [modalActive, setModalActive] = useState(true)
+  const [modalActive, setModalActive] = useState(false)
 
 
   const activeProfile = useSelector(state => state.profiles.activeProfile);

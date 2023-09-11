@@ -6,9 +6,11 @@ import visa from '../../img/visa.svg';
 import mastercard from '../../img/mastercard.svg';
 import amex from '../../img/amex.svg';
 import vector from '../../img/Vector.svg';
+import { useNavigate } from 'react-router-dom';
 
 
 const PickPremium = () => {
+    const navigate = useNavigate();
     return (
         <div className={style.pick_premuim}>
             <div className={style.pick_premuim_text}>
@@ -35,7 +37,7 @@ const PickPremium = () => {
                         <div  className={style.vectors}><img src={vector} alt="" /><p>On-demand playback</p></div>
                     </div>
                     <div className={style.card_start_down}>
-                        <button>Get Started</button>
+                        <button onClick={() => navigate('/premium-order')}>Get Started</button>
                         <p>Individual plan only. $10.99/month after. Terms and conditions apply. Open only to users who haven't already tried Premium. Offer ends September 12, 2023.</p>
                     </div>
                 </div>
@@ -50,7 +52,7 @@ const PickPremium = () => {
                         <div  className={style.vectors}><img src={vector} alt="" /><p>Ad-free music listening, play offline, on-demand playback</p></div>
                     </div>
                     <div className={style.card_start_down}>
-                        <button>Get Started</button>
+                        <button onClick={() => navigate('/premium-order')}>Get Started</button>
                         <p>Free for 1 month, then $14.99 per month after. Offer only available if you haven't tried Premium before. For couples who reside at the same address. Terms apply.</p>
                     </div>
                 </div>
@@ -67,7 +69,7 @@ const PickPremium = () => {
                         <div  className={style.vectors}><img src={vector} alt="" /><p>Spotify Kids: a separate app made just for kids</p></div>
                     </div>
                     <div className={style.card_start_down}>
-                        <button>Get Started</button>
+                        <button onClick={() => navigate('/premium-order')}>Get Started</button>
                         <p>Individual plan only. $10.99/month after. Terms and conditions apply. Open only to users who haven't already tried Premium. Offer ends September 12, 2023.</p>
                     </div>
                 </div>
@@ -84,7 +86,7 @@ const PickPremium = () => {
                         <div  className={style.vectors}><img src={vector} alt="" /><p>On-demand playback</p></div>
                     </div>
                     <div className={style.card_start_down}>
-                        <button>Get Started</button>
+                        <button onClick={() => navigate('/premium-order')}>Get Started</button>
                         <p>Free for 3 months, then $5.99 per month after. Offer currently includes access to Hulu (With Ads) plan, subject to eligibility. Offer available only to students at an accredited higher education institution and if you haven't tried Premium before. Terms apply. Offer ends September 12, 2023.</p>
                     </div>
                 </div>

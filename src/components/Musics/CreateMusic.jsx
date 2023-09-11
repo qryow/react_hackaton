@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { createMusic } from '../../store/musics/musicActions'
+import { createMusic } from '../../store/musics/musicActions';
+import style from '../../styles/index.module.css';
 
 const CreateMusic = () => {
   const [music, setMusic] = useState({
@@ -17,9 +18,8 @@ const CreateMusic = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div >
-      <div >
+
+    <div className={style.create_music}>
         <h3>Create Card</h3>
         <input
           type="text"
@@ -64,9 +64,8 @@ const CreateMusic = () => {
         >
           Create
         </button>
-      </div>
     </div>
-    </>
+
   )
 }
 
