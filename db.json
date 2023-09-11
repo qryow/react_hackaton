@@ -1,5 +1,12 @@
 {
   "profiles": [
+    {
+      "username": "asd",
+      "name": "asd",
+      "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
+      "primeStatus": true,
+      "id": 1
+    }
   ],
   "musics": [
     {
@@ -31,7 +38,8 @@
       "artist": "Halsey",
       "artwork": "https://samplesongs.netlify.app/album-arts/without-me.jpg",
       "album": "qwe",
-      "url": "https://samplesongs.netlify.app/Without%20Me.mp3"
+      "url": "https://samplesongs.netlify.app/Without%20Me.mp3",
+      "id": 4
     }
   ]
 }
