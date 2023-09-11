@@ -21,9 +21,9 @@ const OneJanre = () => {
     console.log(genre);
     if(Array.isArray(musics)) {
       musicsByGenre = musics.filter(music => music.janre === genre);
-      //console.log('Musics:', musics);
-      //console.log('Genre:', genre);
-      //console.log('Musics by Genre:', musicsByGenre);
+      console.log('Musics:', musics);
+      console.log('Genre:', genre);
+      console.log('Musics by Genre:', musicsByGenre);
       if(musicsByGenre) {
         dispatch(setSelectedSongs(musicsByGenre))
       }
