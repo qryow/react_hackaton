@@ -9,6 +9,7 @@ const ProfileSideBar = ({active, setActive}) => {
 
 
   const activeProfile = useSelector(state => state.profiles.activeProfile);
+  console.log(activeProfile);
 
     if (!activeProfile) {
       return (

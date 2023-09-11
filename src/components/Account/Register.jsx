@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, NavLink } from 'react-router-dom'
 
-import style from './Registration.module.css'
+import style from './Registration.module.css';
 
 import { registerUser } from '../../store/account/userAction';
 import { clearStatusState } from '../../store/account/userSlice';
-import { createProfile } from '../../store/profile/profileActions'
+import { createProfile } from '../../store/profile/profileActions';
 
 
 const Register = () => {
@@ -26,7 +26,8 @@ const Register = () => {
         const updatedProfile = {
           username: user.username,
           name: user.username,
-          avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
+          avatar: "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
+          primeStatus: false
         };
       dispatch(createProfile(updatedProfile))
     }

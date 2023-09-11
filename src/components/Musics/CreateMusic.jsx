@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { createMusic } from '../../store/musics/musicActions'
+import { createMusic } from '../../store/musics/musicActions';
 
 const CreateMusic = () => {
   const [music, setMusic] = useState({
@@ -17,9 +17,7 @@ const CreateMusic = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div >
-      <div >
+    <div >
         <h3>Create Card</h3>
         <input
           type="text"
@@ -59,14 +57,12 @@ const CreateMusic = () => {
         <button
           onClick={() => {
             dispatch(createMusic(music));
-            navigate("/homepage");
+            navigate("/search");
           }}
         >
           Create
         </button>
-      </div>
     </div>
-    </>
   )
 }
 

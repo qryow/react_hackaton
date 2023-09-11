@@ -6,6 +6,7 @@ import Player from '../components/Player/Player';
 import MusicListPage from './HomePage/MusicListPage';
 import ProfileSideBar from '../components/Profile/ProfileSideBar';
 import { setActiveProfile } from '../store/profile/profileSlice'; 
+import MusicEdit from '../components/Musics/MusicEdit';
 import Janres from '../components/Janres/Janres';
 
 const HomePage = () => {

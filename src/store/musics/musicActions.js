@@ -13,8 +13,8 @@ export const getMusics = createAsyncThunk(
 
 export const createMusic = createAsyncThunk(
   'musics/createMusic',
-  async (newProductObj, { dispatch }) => {
-    await axios.post(MUSICS_API, newProductObj);
+  async (newMusicObj, { dispatch }) => {
+    await axios.post(MUSICS_API, newMusicObj);
     dispatch(getMusics);
   }
 )

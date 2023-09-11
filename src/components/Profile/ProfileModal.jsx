@@ -30,6 +30,7 @@ const ProfileModal = ({active, setActive}) => {
     setActive(false)
   };
   
+  
 
   return (
     <>
