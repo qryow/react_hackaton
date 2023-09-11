@@ -5,14 +5,20 @@ const ProfileSlice = createSlice({
   name: 'profiles',
   initialState: {
     profiles: [],
-    activeProfile: null
+    activeProfile: {
+      premiumStatus: false
+    }
   },
   reducers: {
     setActiveProfile: (state, action) => {
       state.activeProfile = action.payload;
-      console.log(action.payload)
-    }
-  },
+    },
+    togglePrimeStatus: (state, action) => {
+      if (state.activeProfile) {
+        state.activeProfile.premiumStatus = !state.activeProfile.premiumStatus;
+      }
+    },
+  },    
   extraReducers: (builder) => {
     builder
       .addCase(getProfile.fulfilled, (state, action) => {
@@ -21,5 +27,6 @@ const ProfileSlice = createSlice({
   },
 });
 
-export const { setActiveProfile } = ProfileSlice.actions;
+
+export const { setActiveProfile, togglePrimeStatus } = ProfileSlice.actions;
 export default ProfileSlice.reducer;
