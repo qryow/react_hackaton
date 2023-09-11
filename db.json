@@ -1,25 +1,18 @@
 {
   "profiles": [
     {
-      "username": "7",
-      "name": "7",
+      "username": "elmar",
+      "name": "elmar",
       "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
       "primeStatus": false,
-      "id": 12
+      "id": 1
     },
     {
-      "username": "9",
-      "name": "9",
+      "username": "qwer",
+      "name": "qwer",
       "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
-      "primeStatus": true,
-      "id": 13
-    },
-    {
-      "username": "9",
-      "name": "9",
-      "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
-      "primeStatus": true,
-      "id": 14
+      "primeStatus": false,
+      "id": 2
     }
   ],
   "musics": [

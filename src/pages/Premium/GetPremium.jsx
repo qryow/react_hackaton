@@ -10,9 +10,9 @@ const GetPremium = () => {
             <h1>Ends soon: $0 for 3 months of Premium</h1>
             <p className={style.p1}>Don't miss ad-free music listening, offline playback, and more. Cancel anytime.</p>
             <div>
-                <button onClick={() => navigate('/premium-order')} className={style.get_button} href="javascript:void(0)">
+                <button onClick={() => navigate('/premium-order')} className={style.get_button}>
                     <span>GET STARTED</span>
-                    <div class={style.wave}></div>
+                    <div className={style.wave}></div>
                 </button>
             </div>
             <p>1 month free not available for users who have already tried Premium.</p>

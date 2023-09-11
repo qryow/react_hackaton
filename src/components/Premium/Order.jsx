@@ -12,6 +12,9 @@ const Order = () => {
   const [selectedText, setSelectedText] = useState(null);
   const navigate = useNavigate();
 
+  //const activeProfile = useSelector(state => state.profiles.activeProfile);
+  //console.log(activeProfile);
+
   const textContainers = [
     { id: 'textContainer1', text: 'Individual', description: '$10.99/month after offer period' },
     { id: 'textContainer2', text: 'Duo', description: '$14.99/month after offer period' },
@@ -25,25 +28,6 @@ const Order = () => {
     event.preventDefault();
     setSelectedText(newText);
   };
-
-  const activeProfile = useSelector(state => state.profiles.activeProfile);
-  console.log(activeProfile);
-  const premiumStatus = activeProfile ? activeProfile.primeStatus : true;
-  console.log(premiumStatus);
-
-  const handleTogglePrimeStatus = () => {
-
-    if (activeProfile) {
-      console.log('Before toggle, premiumStatus:', premiumStatus);
-      dispatch(togglePrimeStatus());
-      console.log('After toggle, premiumStatus:', premiumStatus);
-      dispatch(getProfile())
-    }
-  };
-  
-  
-  
-
 
 
   return (
@@ -74,7 +58,7 @@ const Order = () => {
             </div>
           )
         ))}
-        <button className={style.addbtn} onClick={handleTogglePrimeStatus}>add</button>
+        <button className={style.addbtn} >add</button>
       </div>
       <button onClick={() => navigate('/homepage')} className={style.homebtn}>
         <img src={left} alt="" />
