@@ -29,7 +29,7 @@ const HomePage = () => {
                 <button className={style.btn} onClick={() => setProfileActive(true)}></button>
               </div>
               <Janres />
-              <MusicListPage />
+              {/*<MusicListPage />*/}
             </div>
             <div className={style.right__block}>
             </div>
