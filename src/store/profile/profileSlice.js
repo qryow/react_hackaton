@@ -6,7 +6,7 @@ const ProfileSlice = createSlice({
   initialState: {
     profiles: [],
     activeProfile: {
-      premiumStatus: false
+      primeStatus: false
     }
   },
   reducers: {
@@ -15,7 +15,7 @@ const ProfileSlice = createSlice({
     },
     togglePrimeStatus: (state, action) => {
       if (state.activeProfile) {
-        state.activeProfile.premiumStatus = !state.activeProfile.premiumStatus;
+        state.activeProfile.primeStatus = !state.activeProfile.primeStatus;
       }
     },
   },    

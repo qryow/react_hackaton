@@ -121,7 +121,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className={style.navbar_down}>
-        <p>Legal</p>
+        <p onClick={() => navigate('/premium')}>Get Premium</p>
         <p>Privacy Center</p>
         <p>Privacy Policy</p>
         <p>Cookies</p>

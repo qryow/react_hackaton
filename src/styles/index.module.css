@@ -837,3 +837,32 @@ hr{
     border: none;
     cursor: pointer;
 }
+
+
+
+/* !Create Page */
+
+.create_music{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+width: 70%;
+}
+
+.create_music *{
+    color: white;
+}
+
+.create_music input{
+    background: none;
+    border: none;
+    font-size: 22px;
+}
+
+.create_music > button{
+    font-size: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
