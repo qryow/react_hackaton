@@ -3,9 +3,10 @@ import MusicList from '../../components/Musics/MusicList';
 
 const MusicListPage = () => {
     return (
-        <div>
-            <MusicList />
-        </div>
+        <>
+          <MusicList />
+        </>
+        
     );
 };
 

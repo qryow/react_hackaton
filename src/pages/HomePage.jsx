@@ -24,10 +24,14 @@ const HomePage = () => {
             <Player />
             <Navbar />
             <div className={style.content}>
-            <MusicListPage />
+              <div className={style.search_navbar}>
+                <button className={style.btn} onClick={() => setProfileActive(true)}></button>
+              </div>
+              <MusicListPage />
+            </div>
+            <div className={style.right__block}>
             </div>
             {/*<div className={style.profile__wrapper}></div>*/}
-              <button className={style.btn} onClick={() => setProfileActive(true)}></button>
             <ProfileSideBar active={profileActive} setActive={setProfileActive} />
         </div>
     );
