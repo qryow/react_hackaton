@@ -6,6 +6,7 @@ import Player from '../components/Player/Player';
 import MusicListPage from './HomePage/MusicListPage';
 import ProfileSideBar from '../components/Profile/ProfileSideBar';
 import { setActiveProfile } from '../store/profile/profileSlice'; 
+import Janres from '../components/Janres/Janres';
 
 const HomePage = () => {
   const [profileActive, setProfileActive] = useState(true)
@@ -27,6 +28,7 @@ const HomePage = () => {
               <div className={style.search_navbar}>
                 <button className={style.btn} onClick={() => setProfileActive(true)}></button>
               </div>
+              {/*<Janres />*/}
               <MusicListPage />
             </div>
             <div className={style.right__block}>

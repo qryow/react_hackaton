@@ -11,6 +11,12 @@
       "name": "elmar",
       "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
       "id": 2
+    },
+    {
+      "username": "elmar",
+      "name": "elmar",
+      "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
+      "id": 3
     }
   ],
   "musics": [
@@ -20,7 +26,7 @@
       "artwork": "https://samplesongs.netlify.app/album-arts/death-bed.jpg",
       "album": "Death Bed",
       "url": "https://samplesongs.netlify.app/Death%20Bed.mp3",
-      "id": "1"
+      "id": 1
     },
     {
       "title": "Bad Lia",
@@ -28,7 +34,7 @@
       "artwork": "https://samplesongs.netlify.app/album-arts/bad-liar.jpg",
       "album": "qwe",
       "url": "https://samplesongs.netlify.app/Bad%20Liar.mp3",
-      "id": "2"
+      "id": 2
     },
     {
       "title": "Faded",
@@ -36,7 +42,7 @@
       "artwork": "https://samplesongs.netlify.app/album-arts/faded.jpg",
       "album": "qwe",
       "url": "https://samplesongs.netlify.app/Faded.mp3",
-      "id": "3"
+      "id": 3
     },
     {
       "title": "Without Me",
@@ -44,7 +50,16 @@
       "artwork": "https://samplesongs.netlify.app/album-arts/without-me.jpg",
       "album": "qwe",
       "url": "https://samplesongs.netlify.app/Without%20Me.mp3",
-      "id": "6"
+      "id": 4
+    },
+    {
+      "title": "Death bed",
+      "artist": "Powfu",
+      "artwork": "https://samplesongs.netlify.app/album-arts/death-bed.jpg",
+      "album": "Death Bed",
+      "janre": "qwe",
+      "url": "https://samplesongs.netlify.app/death%20bed.mp3",
+      "id": 5
     }
   ]
 }

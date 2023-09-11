@@ -21,7 +21,7 @@ const MusicEdit = ({active, setActive}) => {
           <div className={active ? `${style.modal__wrapper} ${style.active}` : `${style.modal__wrapper}`} onClick={e => e.stopPropagation()}>
             <div className={style.modal__nav}>
               <h3 className={style.modal__title}>Music edit</h3>
-              <div className={style.nav__close} onClick={() => navigate('/homepage')}>
+              <div className={style.nav__close} onClick={() => navigate('/search')}>
                 <img className={style.nav__close_img} src={close} alt="Close" onClick={() => setActive(false)} />
               </div>
             </div>
