@@ -19,3 +19,20 @@ export const createMusic = createAsyncThunk(
   }
 )
 
+export const deleteMusic = createAsyncThunk(
+  'musics/deleteMusic',
+  async ({ id }, {dispatch}) => {
+    await axios.delete(`${MUSICS_API}/${id}`)
+    dispatch(getMusics())
+  }
+)
+
+export const editMusic = createAsyncThunk(
+  'profile/editMusic',
+  async ( editedObj ) => {
+    const updatedMusic = { ...editedObj };
+    console.log(updatedMusic)
+    const res = await axios.patch(`${MUSICS_API}/${editedObj.id}`, updatedMusic);
+    return res.data;
+  }
+)

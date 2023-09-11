@@ -2,22 +2,13 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import style from './styles/Profile.module.css';
 import close from '../../images/close.png';
-import Profile from '../../components/Profile/Profile'
 import ProfileModal from './ProfileModal';
 
 const ProfileSideBar = ({active, setActive}) => { 
   const [modalActive, setModalActive] = useState(true)
-  //const [isOpen, setIsOpen] = useState(false);
+
 
   const activeProfile = useSelector(state => state.profiles.activeProfile);
-
-  //const toggle = () => {
-  //  setIsOpen(!isOpen);
-  //};
-
-  //const profileClasses = isOpen
-  //  ? `${style.profile__wrapper} ${style.open}`
-  //  : `${style.profile__wrapper} ${style.close}`;
 
     if (!activeProfile) {
       return (
@@ -29,11 +20,6 @@ const ProfileSideBar = ({active, setActive}) => {
 
   return (
     <>
-      {/*<div className={style.navbar__wrapper}></div>*/}
-
-      {/*<button onClick={toggle}>Profile</button>*/}
-
-      {/*<div className={profileClasses}>*/}
       <div className={active ? `${style.wrapper} ${style.active}` : `${style.wrapper}`} onClick={() => setActive(false)}>
         <div className={active ? `${style.profile__wrapper} ${style.active}` : `${style.profile__wrapper}`} onClick={e => e.stopPropagation()}>
           <div className={style.profile__account}>
@@ -55,7 +41,6 @@ const ProfileSideBar = ({active, setActive}) => {
         </div>
         
       </div>
-      {/*</div>*/}
       <ProfileModal active={modalActive} setActive={setModalActive} />
     </>
   );

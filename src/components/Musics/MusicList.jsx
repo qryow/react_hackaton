@@ -8,6 +8,7 @@ import { getMusics } from '../../store/musics/musicActions';
 
 const MusicList = () => {
     const { musics, loading } = useSelector(state => state.musics);
+    console.log(musics);
 
     const dispatch = useDispatch();
 
