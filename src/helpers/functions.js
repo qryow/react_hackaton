@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ACCOUNT_API } from './consts';
+import { ACCOUNT_API, MUSICS_API } from './consts';
 import '../components/Profile/styles/Profile.module.css'
 
 //* registration
@@ -20,5 +20,14 @@ export const updateToken = () => {
 };
 
 
-//* sidebar
+//* janre 
 
+export const getJanres = async () => {
+  const { data } = await axios.get(`${MUSICS_API}`)
+  const uniqueJanre = new Set(data.map(music => music.janre))
+  const janres = [];
+  for(let i of uniqueJanre) {
+    janres.push(i)
+  }
+  return janres;
+}

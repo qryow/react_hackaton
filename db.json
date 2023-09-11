@@ -19,6 +19,7 @@
       "artist": "Powfu",
       "artwork": "https://samplesongs.netlify.app/album-arts/death-bed.jpg",
       "album": "Death Bed",
+      "janre": "pop",
       "url": "https://samplesongs.netlify.app/Death%20Bed.mp3",
       "id": "1"
     },
@@ -27,6 +28,7 @@
       "artist": "Imagine Dragons",
       "artwork": "https://samplesongs.netlify.app/album-arts/bad-liar.jpg",
       "album": "qwe",
+      "janre": "pop",
       "url": "https://samplesongs.netlify.app/Bad%20Liar.mp3",
       "id": "2"
     },
@@ -35,6 +37,7 @@
       "artist": "Alan Walker",
       "artwork": "https://samplesongs.netlify.app/album-arts/faded.jpg",
       "album": "qwe",
+      "janre": "electro",
       "url": "https://samplesongs.netlify.app/Faded.mp3",
       "id": "3"
     },
@@ -43,6 +46,7 @@
       "artist": "Halsey",
       "artwork": "https://samplesongs.netlify.app/album-arts/without-me.jpg",
       "album": "qwe",
+      "janre": "pop",
       "url": "https://samplesongs.netlify.app/Without%20Me.mp3",
       "id": "6"
     }

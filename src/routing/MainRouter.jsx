@@ -11,6 +11,8 @@ import LikedPage from '../pages/LikedPage'
 import CreateMusicPage from '../pages/CreateMusicPage'
 import PremiumAccPage from '../pages/PremiumAccPage'
 import EditProfilePage from '../pages/ProfilePages/EditProfilePage'
+//import OneJanre from '../components/Janres/OneJanre'
+import GenresPage from '../pages/GenresPage/GenresPage'
 
 const MainRouter = () => {
   const ROUTES = [
@@ -68,6 +70,11 @@ const MainRouter = () => {
       id: 11,
       path: '/premium',
       element: <PremiumAccPage />
+    },
+    {
+      id: 11,
+      path: '/musics/:janre',
+      element: <GenresPage />
     }
   ]
 
