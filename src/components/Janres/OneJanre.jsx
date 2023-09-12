@@ -3,7 +3,6 @@ import style from './styles/Janres.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { setSelectedSongs } from '../../store/musics/musicSlice'
 import { useNavigate } from 'react-router'
-//import { setSelectedGenre } from '../../store/musics/musicSlice'
 
 import OneJanreList from './OneJanreList'
 
@@ -21,9 +20,6 @@ const OneJanre = () => {
     console.log(genre);
     if(Array.isArray(musics)) {
       musicsByGenre = musics.filter(music => music.janre === genre);
-      console.log('Musics:', musics);
-      console.log('Genre:', genre);
-      console.log('Musics by Genre:', musicsByGenre);
       if(musicsByGenre) {
         dispatch(setSelectedSongs(musicsByGenre))
       }
@@ -33,7 +29,6 @@ const OneJanre = () => {
   return (
     <div className={style.nav_list__wrapper} onClick={() => {
       handleSong();
-      //navigate('/')
     }}>
       <OneJanreList />
       <button className={style.see__btn} onClick={() => {

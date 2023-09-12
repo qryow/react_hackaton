@@ -11,11 +11,6 @@ const ProfileSlice = createSlice({
     setActiveProfile: (state, action) => {
       state.activeProfile = action.payload;
     },
-    //togglePrimeStatus: (state, action) => {
-    //  if (state.activeProfile) {
-    //    state.activeProfile.primeStatus = !state.activeProfile.primeStatus;
-    //  }
-    //},
   },    
   extraReducers: (builder) => {
     builder

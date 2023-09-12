@@ -17,7 +17,6 @@ const RightBlock = () => {
             </div>
             <div className={style.songname}>
               <h2 className={style.title}> { selectedSong.artist } - { selectedSong.title } </h2>
-              {/*<h4> { selectedSong.artist } </h4>*/}
             </div>
           </>
         )}

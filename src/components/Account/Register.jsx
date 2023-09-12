@@ -20,7 +20,7 @@ const Register = () => {
 
       if (registrationResult.status === "error") {
         console.error('error:', registrationResult.error);
-        registrationResult.error = 'Ошибка при регистрации';
+        registrationResult.error = 'Error on register!';
         return registrationResult;
       } else {
         const updatedProfile = {

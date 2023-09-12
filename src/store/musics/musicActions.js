@@ -15,7 +15,6 @@ export const getMusicsJanre = createAsyncThunk(
   'musics/getMusicsJanre',
   async (_, { getState }) => {
     const { currentJanre } = getState().musics;
-    //const janreAndSearchParams = `q=${search}${currentJanre && `&type=${currentJanre}`}`; 
     const res = await axios.get(`${MUSICS_API}${currentJanre && `&type=${currentJanre}`}`);
     return { res };
   }

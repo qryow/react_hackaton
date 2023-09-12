@@ -38,7 +38,6 @@ const Login = () => {
     dispatch(loginUser({ user, navigate }));
     const activeProfile = foundProfile
     localStorage.setItem('activeProfile', JSON.stringify(activeProfile));
-    //console.log(foundProfile)
   };
 
 

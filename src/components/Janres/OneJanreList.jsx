@@ -6,9 +6,7 @@ const OneJanreList = () => {
   return (
     <>
       <div className={style.search_navbar}>
-
       </div>
-      
       <JanreList />
     </>
   )

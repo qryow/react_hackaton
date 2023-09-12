@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { editMusic, getMusics } from '../../store/musics/musicActions';
-import { setActiveProfile } from '../../store/profile/profileSlice';
 import close from '../../images/close.png'
 import style from './styles/MusicEdit.module.css'
 
@@ -36,21 +35,18 @@ const MusicEdit = ({active, setActive}) => {
 
                         <div className={style.input__box}>
                         <input type="text" required placeholder='Name of song' className={style.form__input} onChange={(e) => setSong({ ...song, title: e.target.value})} value={song.title}  />
-                          <label> </label>
                           <img src="" alt="" />
                         </div>
 
                         <div className={style.input__box}>
-                        <input type="text" required placeholder='URL for poster' className={style.form__input} onChange={(e) => setSong({ ...song, artwork: e.target.value })} />                     
-                          <label> </label>
+                        <input type="text" required placeholder='URL for poster' className={style.form__input} onChange={(e) => setSong({ ...song, artwork: e.target.value })} />   
                           <img src="" alt="" />
                         </div>
 
-                        {/*<div className={style.input__box}> //! Artist name
-                        <input type="text" required placeholder='' className={style.form__input}  />                     
-                          <label> </label>
+                        <div className={style.input__box}>
+                        <input type="text" required placeholder='Artist' className={style.form__input} onChange={(e) => setSong({ ...song, artist: e.target.value })} value={song.artist}  />  
                           <img src="" alt="" />
-                        </div>*/}
+                        </div>
 
 
                         <button className={style.modal__btn} onClick={() => {

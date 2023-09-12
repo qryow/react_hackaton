@@ -2,8 +2,8 @@
   "profiles": [
     {
       "username": "elmar",
-      "name": "elmar",
-      "avatar": "https://i.pinimg.com/564x/c8/a6/16/c8a616e058bf562f5acb2f3b101dc876.jpg",
+      "name": "Elmar",
+      "avatar": "https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg",
       "primeStatus": true,
       "id": 1
     }
@@ -11,7 +11,7 @@
   "musics": [
     {
       "title": "Death deb",
-      "artist": "Powfu",
+      "artist": "Powfur",
       "artwork": "https://samplesongs.netlify.app/album-arts/death-bed.jpg",
       "album": "Death Bed",
       "janre": "pop",
