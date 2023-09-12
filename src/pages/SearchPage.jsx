@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import SearchNavbar from './SearchPage/SearchNavbar';
 import MusicListPage from './HomePage/MusicListPage';
 import Player from '../components/Player/Player'
+import RightBlock from '../components/HomePage/RightBlock';
 import style from '../styles/index.module.css';
 
 const SearchPage = () => {
@@ -14,6 +15,7 @@ const SearchPage = () => {
               <SearchNavbar />
               <MusicListPage />
             </div>
+            <RightBlock />
         </div>
     );
 };

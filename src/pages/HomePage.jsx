@@ -7,6 +7,7 @@ import MusicListPage from './HomePage/MusicListPage';
 import ProfileSideBar from '../components/Profile/ProfileSideBar';
 import { setActiveProfile } from '../store/profile/profileSlice'; 
 import Janres from '../components/Janres/Janres';
+import RightBlock from '../components/HomePage/RightBlock'
 
 const HomePage = () => {
   const [profileActive, setProfileActive] = useState(false)
@@ -37,8 +38,7 @@ const HomePage = () => {
               <Janres />
 
             </div>
-            <div className={style.right__block}>
-            </div>
+            <RightBlock />
             <ProfileSideBar active={profileActive} setActive={setProfileActive} />
         </div>
     );

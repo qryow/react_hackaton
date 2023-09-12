@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
   right: 0;
-  width: 28%;
+  width: 24.5%;
   z-index: 2;
   height: 100vh;
   display: flex;
@@ -74,8 +74,8 @@
 }
 
 .profile__img {
-  width: 35%;
-  height: 155px;
+  width: 40%;
+  height: 147px;
   border-radius: 50%;
   filter: drop-shadow(0 0 30px rgb(0, 0, 0));
   overflow: hidden;
@@ -110,7 +110,7 @@
   font-family: sans-serif;
   font-size: 30px;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 

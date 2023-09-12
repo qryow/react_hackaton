@@ -1,5 +1,4 @@
-  
-import React, { useRef, useState, useEffect } from 'react';
+  import React, { useRef, useState, useEffect } from 'react';
 import style from './styles/MusicPlayer.module.css'
 import { useSelector } from 'react-redux';
 import Playersong from './PlayerSong'
