@@ -10,12 +10,12 @@ const musicsSlice = createSlice({
     selectedSong: null,
     currentJanre: '',
     selectedGenre: '',
-    selectedSongs: []
-
+    selectedSongs: [],
   },
   reducers: {
     changeSearchVal: (state, action) => {
       state.search = action.payload.search;
+      console.log(action.payload.search);
     },
     setSelectedSong: (state, action) => {
       state.selectedSong = action.payload;
@@ -47,6 +47,6 @@ const musicsSlice = createSlice({
 })
 
 
-export const { changeSearchVal, setSelectedSong, changeJanre, setSelectedGenre, setSelectedSongs } = musicsSlice.actions;
+export const { changeSearchVal, setSelectedSong, changeJanre, setSelectedGenre, setSelectedSongs, } = musicsSlice.actions;
 
 export default musicsSlice.reducer;

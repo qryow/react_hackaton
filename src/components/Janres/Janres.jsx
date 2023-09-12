@@ -31,7 +31,7 @@
 
     return (
       <div className={style.janrs}>
-        <h2>Genres</h2>
+        <h2 className={style.genres}>Genres</h2>
         <div className={style.janrs__wrapper}>
         {janres.map((janre, index) => (
           <div key={index} className={style.janr__block} onClick={() => {

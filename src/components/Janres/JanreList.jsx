@@ -19,7 +19,7 @@ const MusicList = () => {
 
     return (
         <div className={style.music_list}>
-            <div className={style.top}><p>#</p><p className={style.top_title}>TITLE</p><p className={style.top_album}>ALBUM</p><img src={clock} alt="" /></div>
+            <div className={style.top}><p>#</p><p className={style.top_title}>TITLE</p><p className={style.top_album}>ALBUM</p></div>
                 <hr className={style.line} />
                 <>
                     {/*{musics.map(music => (

@@ -4,6 +4,7 @@ import Janres from '../../components/Janres/Janres'
 import OneJanre from '../../components/Janres/OneJanre'
 import Player from '../../components/Player/Player'
 import Navbar from '../../components/Navbar'
+import RightBlock from '../../components/HomePage/RightBlock'
 
 const GenresPage = () => {
   return (
@@ -12,6 +13,7 @@ const GenresPage = () => {
       <Player />
       <Navbar />
       <OneJanre />
+      <RightBlock />
     </div>
     </>
   )
